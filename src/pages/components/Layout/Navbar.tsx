@@ -1,14 +1,23 @@
-import { useEffect, useState, useRef, RefObject } from "react";
+import {
+  useEffect,
+  useState,
+  useRef,
+  RefObject,
+  Dispatch,
+  SetStateAction,
+} from "react";
 import { env } from "~/env.js";
 
 export const Navbar = ({
   routes,
+  setNavHeight,
 }: {
   routes: {
     name: string;
     path: string;
     height?: number;
   }[];
+  setNavHeight: Dispatch<SetStateAction<number>>;
 }) => {
   const [redirect, setRedirect] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -16,6 +25,7 @@ export const Navbar = ({
   const [displayButton, setDisplayButton] = useState(false);
   const pastPath = useRef<string>("");
   const routeRefs: Record<string, RefObject<HTMLAnchorElement>> = {};
+  const barRef = useRef<HTMLDivElement>(null);
 
   const filteredRoutes = routes.filter(
     (route) => route.height !== null && route.height !== undefined,
@@ -53,6 +63,7 @@ export const Navbar = ({
     if (path === pastPath.current) {
       pastPath.current = path;
       for (const ref in routeRefs) {
+        console.log("updating");
         if (ref !== path) {
           routeRefs[ref]?.current?.classList.remove("text-palette-blue");
           routeRefs[ref]?.current?.classList.add("text-white");
@@ -70,6 +81,7 @@ export const Navbar = ({
     }
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
+    setNavHeight(barRef.current?.clientHeight || 0);
   }, []);
 
   const handleOpenMenu = () => {
@@ -85,7 +97,10 @@ export const Navbar = ({
   };
 
   return (
-    <nav className="fixed start-0 top-0 z-20 w-full bg-primary dark:border-gray-600 dark:bg-gray-900">
+    <nav
+      ref={barRef}
+      className="fixed start-0 top-0 z-20 w-full bg-primary dark:border-gray-600 dark:bg-gray-900"
+    >
       <div className="flex max-w-screen-xl flex-wrap items-center justify-between p-4">
         <a
           {...(redirect ? { href: env.NEXT_PUBLIC_PROJECT_URL } : {})}
