@@ -1,0 +1,59 @@
+{
+  "logos": [
+    {
+      "path": "/RoBorregos.png",
+      "href": "",
+      "alt": "RoBorregos"
+    },
+    {
+      "path": "/Dataexpress.png",
+      "href": "",
+      "alt": "Dataexpress"
+    }
+  ],
+  "programmingLanguages": [
+    {
+      "title": "Java",
+      "description": "3 years",
+      "image": "/About/Java.png"
+    },
+    {
+      "title": "C++",
+      "description": "2 years",
+      "image": "/About/C++.png"
+    },
+    {
+      "title": "Python",
+      "description": "2 years",
+      "image": "/About/Python.png"
+    },
+    {
+      "title": "Javascript",
+      "description": "1 year",
+      "image": "/Dataexpress.png"
+    },
+    {
+      "title": "Typescript",
+      "description": "1 year",
+      "image": "/Dataexpress.png"
+    },
+    {
+      "title": "Bash",
+      "description": "1 year",
+      "image": "/Dataexpress.png"
+    }
+  ],
+
+  "technologies": [
+    {
+      "title": "Python",
+      "description": "80",
+      "image": "/Dataexpress.png"
+    },
+    {
+      "title": "Arduino",
+      "description": "2 years",
+      "image": "/About/Arduino.png"
+    }
+  ]
+}
