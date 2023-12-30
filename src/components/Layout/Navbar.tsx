@@ -2,9 +2,9 @@ import {
   useEffect,
   useState,
   useRef,
-  RefObject,
-  Dispatch,
-  SetStateAction,
+  type RefObject,
+  type Dispatch,
+  type SetStateAction,
 } from "react";
 import { env } from "~/env.js";
 
@@ -35,9 +35,10 @@ export const Navbar = ({
     routeRefs[route.path] = useRef<HTMLAnchorElement>(null);
   });
 
-  filteredRoutes.sort((a, b) => (a.height || 0) - (b.height || 0));
+  filteredRoutes.sort((a, b) => (a.height ?? 0) - (b.height ?? 0));
 
   const handleResize = () => {
+    setNavHeight(barRef.current?.clientHeight ?? 0);
     if (window.innerWidth < 768) {
       setDisplayButton(true);
       menuRef.current?.classList.add("scale-0");
@@ -47,23 +48,24 @@ export const Navbar = ({
     }
   };
   const handleScroll = () => {
-    let max: number = 0;
+    let max = -1;
     let path = "";
     const scrollY = window.scrollY;
 
-    for (let i = 0; i < filteredRoutes.length; i++) {
-      const route = filteredRoutes[i];
-
-      if (route?.height && scrollY >= route.height && route.height > max) {
+    for (const route of filteredRoutes) {
+      if (
+        route?.height !== undefined &&
+        scrollY >= route.height &&
+        route.height > max
+      ) {
         max = route.height;
         path = route.path;
       }
     }
 
-    if (path === pastPath.current) {
+    if (path !== pastPath.current) {
       pastPath.current = path;
       for (const ref in routeRefs) {
-        console.log("updating");
         if (ref !== path) {
           routeRefs[ref]?.current?.classList.remove("text-palette-blue");
           routeRefs[ref]?.current?.classList.add("text-white");
@@ -81,7 +83,6 @@ export const Navbar = ({
     }
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
-    setNavHeight(barRef.current?.clientHeight || 0);
   }, []);
 
   const handleOpenMenu = () => {

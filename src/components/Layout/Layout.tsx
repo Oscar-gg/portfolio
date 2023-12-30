@@ -1,4 +1,4 @@
-import { Navbar } from "~/pages/components/Layout/Navbar";
+import { Navbar } from "~/components/Layout/Navbar";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 
@@ -21,8 +21,8 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 
       <Navbar
         routes={[
-          { name: "Home", path: "/", height: 10 },
-          { name: "About", path: "/about", height: 20 },
+          { name: "About", path: "/about", height: 0 },
+          { name: "Experience", path: "/Experience", height: 20 },
           { name: "Projects", path: "/projects", height: 30 },
           { name: "Contact", path: "/contact", height: 40 },
         ]}
