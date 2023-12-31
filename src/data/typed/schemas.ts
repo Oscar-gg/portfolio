@@ -54,3 +54,12 @@ export const projectsSchema = z.object({
   ),
   technologiesOptions: z.array(z.string()),
 });
+
+export const generalSchema = z.object({
+  contact: z.object({
+    github: z.string(),
+    linkedin: z.string(),
+    email: z.string(),
+  }),
+  last_update: z.string(),
+});

@@ -1,8 +1,5 @@
-import { FaGithub } from "react-icons/fa";
-import { TiSocialLinkedinCircular } from "react-icons/ti";
-
-import { IoMail } from "react-icons/io5";
 import { type MutableRefObject, type RefObject, useRef } from "react";
+import { ContactList } from "./List/contactList";
 
 const handleMouseEnter = (
   key: string,
@@ -81,17 +78,7 @@ export const Home = () => {
           {" "}
           Resume
         </button>
-        <FaGithub
-          className="animate-pulseButton rounded-full"
-          color="white"
-          size="40"
-        />
-        <TiSocialLinkedinCircular
-          className="animate-pulseButton rounded-full"
-          color="white"
-          size="40"
-        />
-        <IoMail className="animate-pulseButton" color="white" size="40" />
+        <ContactList/>
       </div>
     </div>
   );
