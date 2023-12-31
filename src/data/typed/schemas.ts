@@ -52,4 +52,5 @@ export const projectsSchema = z.object({
       technologies: z.array(z.string()),
     }),
   ),
+  technologiesOptions: z.array(z.string()),
 });

@@ -17,3 +17,4 @@ export const experience = experienceInfo.experience;
 const projectsInfo = projectsSchema.parse(Projects);
 
 export const projects = projectsInfo.projects;
+export const technologiesOptions = projectsInfo.technologiesOptions;
