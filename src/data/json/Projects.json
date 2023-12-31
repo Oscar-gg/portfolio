@@ -1,0 +1,45 @@
+{
+  "projects": [
+    {
+      "title": "Project 1",
+      "description": "This is project 1",
+      "date": "Aug 2022",
+      "links": [
+        {
+          "path": "https://github.com/RoBorregos",
+          "description": "Roborregos' github"
+        },
+        {
+          "path": "docs",
+          "description": "Roborregos' docs"
+        }
+      ],
+      "images": [
+        { "path": "/Dataexpress.png", "description": "AAAA" },
+        { "path": "", "description": "" }
+      ],
+      "technologies": ["Python", "C++", "ROS", "OpenCV", "Tensorflow"]
+    },
+    {
+      "title": "Project 2",
+      "description": "This is project 1",
+      "date": "Aug 2022",
+      "links": [
+        {
+          "path": "https://github.com/RoBorregos",
+          "description": "Roborregos' github"
+        },
+        {
+          "path": "docs",
+          "description": "Roborregos' docs"
+        }
+      ],
+      "images": [
+        { "path": "/Dataexpress.png", "description": "AAAA" },
+        { "path": "", "description": "" }
+      ],
+      "technologies": ["Python", "C++", "ROS", "OpenCV", "Tensorflow"]
+    }
+  ],
+  "technologiesOptions": ["Python", "C++", "ROS", "OpenCV", "Tensorflow"]
+}

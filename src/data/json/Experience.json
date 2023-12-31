@@ -1,0 +1,104 @@
+{
+  "experience": [
+    {
+      "title": "RoBorregos",
+      "date": "2021 - Present",
+      "position": "Software Developer",
+      "images": [
+        { "path": "/Dataexpress.png", "description": "AAAA" },
+        { "path": "", "description": "" }
+      ],
+      "links": [
+        {
+          "path": "https://github.com/RoBorregos",
+          "description": "Roborregos' github"
+        },
+        {
+          "path": "docs",
+          "description": "Roborregos' docs"
+        }
+      ],
+      "description": "RoBorregos is the representative robotics club from Tecnológico de Monterrey, Campus Monterrey. As part of the team, ..."
+    },
+    {
+      "title": "Dataexpress",
+      "date": "2021 - Present",
+      "position": "Software Developer",
+      "images": [
+        { "path": "", "description": "" },
+        { "path": "", "description": "" }
+      ],
+      "links": [
+        {
+          "path": "https://github.com/RoBorregos",
+          "description": "Roborregos' github"
+        },
+        {
+          "path": "docs",
+          "description": "Roborregos' docs"
+        }
+      ],
+      "description": "RoBorregos is a robotics club from Tecnológico de Monterrey, Campus Monterrey. As part of the team, ..."
+    },
+    {
+      "title": "RoBorregos1",
+      "date": "2021 - Present",
+      "position": "Software Developer",
+      "images": [
+        { "path": "", "description": "" },
+        { "path": "", "description": "" }
+      ],
+      "links": [
+        {
+          "path": "https://github.com/RoBorregos",
+          "description": "Roborregos' github"
+        },
+        {
+          "path": "docs",
+          "description": "Roborregos' docs"
+        }
+      ],
+      "description": "RoBorregos is a robotics club from Tecnológico de Monterrey, Campus Monterrey. As part of the team, ..."
+    },
+    {
+      "title": "RoBorregos2",
+      "date": "2021 - Present",
+      "position": "Software Developer",
+      "images": [
+        { "path": "", "description": "" },
+        { "path": "", "description": "" }
+      ],
+      "links": [
+        {
+          "path": "https://github.com/RoBorregos",
+          "description": "Roborregos' github"
+        },
+        {
+          "path": "docs",
+          "description": "Roborregos' docs"
+        }
+      ],
+      "description": "RoBorregos is a robotics club from Tecnológico de Monterrey, Campus Monterrey. As part of the team, ..."
+    },
+    {
+      "title": "RoBorregos3",
+      "date": "2021 - Present",
+      "position": "Software Developer",
+      "images": [
+        { "path": "", "description": "" },
+        { "path": "", "description": "" }
+      ],
+      "links": [
+        {
+          "path": "https://github.com/RoBorregos",
+          "description": "Roborregos' github"
+        },
+        {
+          "path": "docs",
+          "description": "Roborregos' docs"
+        }
+      ],
+      "description": "RoBorregos is a robotics club from Tecnológico de Monterrey, Campus Monterrey. As part of the team, ..."
+    }
+  ]
+}
