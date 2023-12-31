@@ -8,7 +8,7 @@ export const Section = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div className="my-2 flex flex-col px-10">
+    <div className="flex flex-col px-10 mb-16">
       <div>
         <h2 className="mb-4 text-4xl font-bold text-secondary">{title}</h2>
         <hr className="solid mb-3" />

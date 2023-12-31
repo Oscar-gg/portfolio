@@ -18,3 +18,20 @@ export const aboutSchema = z.object({
   technologies: z.array(listElementSchema),
 });
 
+export const experienceSchema = z.object({
+  experience: z.array(
+    z.object({
+      title: z.string(),
+      date: z.string(),
+      position: z.string(),
+      images: z.array(
+        z.object({
+          path: z.string(),
+          description: z.string(),
+        }),
+      ),
+      links: z.array(z.object({ path: z.string(), description: z.string() })),
+      description: z.string(),
+    }),
+  ),
+});
