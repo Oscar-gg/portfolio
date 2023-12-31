@@ -1,4 +1,3 @@
-import { Section } from "~/components/Layout/Section";
 
 import {
   logos,

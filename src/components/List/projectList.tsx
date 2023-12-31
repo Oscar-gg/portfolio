@@ -1,4 +1,4 @@
-import { ProjectCard, ProjectInfo } from "~/components/card/projectCard";
+import { ProjectCard, type ProjectInfo } from "~/components/card/projectCard";
 
 export const ProjectList = ({ projects, hasFilters }: { projects: ProjectInfo[], hasFilters: boolean }) => {
   const visibleProjects = projects.slice(0, 7);

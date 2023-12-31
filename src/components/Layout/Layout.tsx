@@ -1,13 +1,13 @@
-import { Navbar, Route } from "~/components/Layout/Navbar";
+import { Navbar, type Route } from "~/components/Layout/Navbar";
+import { Footer } from "~/components/Layout/Footer";
 import Head from "next/head";
 import {
   useEffect,
   useRef,
   useState,
   cloneElement,
-  ReactNode,
   Children,
-  Dispatch,
+  type Dispatch,
 } from "react";
 import React from "react";
 import { z } from "zod";
@@ -16,7 +16,7 @@ const routesDefault: Route[] = [
   { name: "About", path: "#about" },
   { name: "Experience", path: "#experience" },
   { name: "Projects", path: "#projects" },
-  { name: "Contact", path: "/contact" },
+  { name: "Contact", path: "#contact" },
 ];
 
 const handleResize = ({
@@ -69,7 +69,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 
   // Add reference to each child, to set the appropriate height dynamically for Navbar color change
   const refChildren = Children.map(
-    children as React.DetailedReactHTMLElement<{}, HTMLElement>[],
+    children as React.DetailedReactHTMLElement<object, HTMLElement>[],
     (child) => {
       if (!child.key) {
         return child;
@@ -119,6 +119,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       <Navbar routes={routes} setNavHeight={setNavHeight} />
       <div ref={spacerRef} className=""></div>
       {refChildren}
+      <Footer routes={routes} />
     </>
   );
 };

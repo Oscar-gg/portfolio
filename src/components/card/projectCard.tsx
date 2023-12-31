@@ -86,17 +86,16 @@ export const ProjectCard = ({
                       </AccordionTrigger>
                       <AccordionContent>
                         <div className="flex flex-row flex-wrap gap-3">
-                          {links &&
-                            links.map((link) => (
-                              <a key={link.path} href={link.path}>
-                                <div className="flex flex-row items-center justify-start gap-x-3">
-                                  <FaExternalLinkAlt size={25} />{" "}
-                                  <p className="items-center text-lg">
-                                    {link.description}
-                                  </p>
-                                </div>
-                              </a>
-                            ))}
+                          {links?.map((link) => (
+                            <a key={link.path} href={link.path}>
+                              <div className="flex flex-row items-center justify-start gap-x-3">
+                                <FaExternalLinkAlt size={25} />{" "}
+                                <p className="items-center text-lg">
+                                  {link.description}
+                                </p>
+                              </div>
+                            </a>
+                          ))}
                         </div>
                       </AccordionContent>
                     </AccordionItem>

@@ -1,5 +1,3 @@
-import { Section } from "~/components/Layout/Section";
-
 import { experience } from "~/data/typed/objects";
 
 import { Card, CardContent } from "~/components/ui/card";
@@ -9,7 +7,7 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "~/components/ui/carousel";
-import { RefObject, useEffect, useRef, useState } from "react";
+import { type RefObject, useEffect, useRef, useState } from "react";
 import { ExperienceCard } from "./card/experienceCard";
 import { Button } from "./ui/button";
 import { twMerge } from "tailwind-merge";
@@ -52,7 +50,9 @@ export const Experience = () => {
       <div className="my-4 flex flex-row flex-wrap items-center gap-3">
         {experienceNames.map((element, index) => (
           <Button
-            onClick={() => api?.scrollTo(index)}
+            onClick={() => {
+              api?.scrollTo(index);
+            }}
             key={element}
             ref={(ref) => {
               if (ref) buttonReferences.current[index] = ref;

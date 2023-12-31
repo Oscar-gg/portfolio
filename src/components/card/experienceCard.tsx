@@ -1,11 +1,4 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "~/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger } from "~/components/ui/dialog";
 
 import {
   Accordion,
@@ -16,6 +9,7 @@ import {
 
 import { FaExternalLinkAlt, FaImage } from "react-icons/fa";
 import { ImageCarousel } from "../carousel/imageCarousel";
+import { twMerge } from "tailwind-merge";
 
 export interface ImageInfo {
   path: string;
@@ -45,7 +39,12 @@ export const ExperienceCard = ({
   className?: string;
 }) => {
   return (
-    <div className="flex flex-col items-center p-6 text-white">
+    <div
+      className={twMerge(
+        "flex flex-col items-center p-6 text-white",
+        className,
+      )}
+    >
       {/* On large screens */}
       <div className="hidden w-full flex-row items-end justify-between space-x-4 align-middle  md:flex">
         <p className="whitespace-nowrap text-palette-blue">{date}</p>
@@ -93,17 +92,14 @@ export const ExperienceCard = ({
                     </DialogContent>
                   </Dialog>
                 )}
-                {links &&
-                  links.map((link) => (
-                    <a key={link.path} href={link.path}>
-                      <div className="flex flex-row items-center justify-start gap-x-3">
-                        <FaExternalLinkAlt size={35} />{" "}
-                        <p className="items-center text-lg">
-                          {link.description}
-                        </p>
-                      </div>
-                    </a>
-                  ))}
+                {links?.map((link) => (
+                  <a key={link.path} href={link.path}>
+                    <div className="flex flex-row items-center justify-start gap-x-3">
+                      <FaExternalLinkAlt size={35} />{" "}
+                      <p className="items-center text-lg">{link.description}</p>
+                    </div>
+                  </a>
+                ))}
               </div>
             </AccordionContent>
           </AccordionItem>

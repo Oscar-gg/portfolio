@@ -122,7 +122,7 @@ export const Navbar = ({
     >
       <div className="flex max-w-screen-xl flex-wrap items-center justify-between p-4">
         <a
-          {...(redirect ? { href: env.NEXT_PUBLIC_PROJECT_URL } : {})}
+          {...(redirect ? { href: env.NEXT_PUBLIC_PROJECT_URL } : {href: "#"})}
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <span className="self-center whitespace-nowrap text-2xl font-semibold text-white">

@@ -1,12 +1,10 @@
-import { Section } from "~/components/Layout/Section";
-
 import { projects } from "~/data/typed/objects";
 
-import { RefObject, useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { ProjectList } from "./List/projectList";
 import { ProjectFilter } from "./filter/projectFilter";
 
-import { TechnologyItem } from "./filter/projectFilter";
+import type { TechnologyItem } from "./filter/projectFilter";
 
 export const Projects = () => {
   const [filteredProjects, setFilteredProjects] = useState(projects);

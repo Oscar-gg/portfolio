@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { type Dispatch, type SetStateAction, useEffect } from "react";
 import { type ProjectInfo } from "../card/projectCard";
 import Select from "react-select";
 
