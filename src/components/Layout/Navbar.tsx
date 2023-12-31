@@ -8,34 +8,28 @@ import {
 } from "react";
 import { env } from "~/env.js";
 
+export interface Route {
+  name: string;
+  path: string;
+  height?: number;
+}
+
 export const Navbar = ({
   routes,
   setNavHeight,
 }: {
-  routes: {
-    name: string;
-    path: string;
-    height?: number;
-  }[];
+  routes: Route[];
   setNavHeight: Dispatch<SetStateAction<number>>;
 }) => {
   const [redirect, setRedirect] = useState(false);
+  const [filteredRoutes, setFilteredRoutes] = useState<Route[]>([]);
+  const [displayButton, setDisplayButton] = useState(false);
+
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const [displayButton, setDisplayButton] = useState(false);
   const pastPath = useRef<string>("");
-  const routeRefs: Record<string, RefObject<HTMLAnchorElement>> = {};
+  const routeRefs: RefObject<Record<string, HTMLAnchorElement>> = useRef({});
   const barRef = useRef<HTMLDivElement>(null);
-
-  const filteredRoutes = routes.filter(
-    (route) => route.height !== null && route.height !== undefined,
-  );
-
-  filteredRoutes.forEach((route) => {
-    routeRefs[route.path] = useRef<HTMLAnchorElement>(null);
-  });
-
-  filteredRoutes.sort((a, b) => (a.height ?? 0) - (b.height ?? 0));
 
   const handleResize = () => {
     setNavHeight(barRef.current?.clientHeight ?? 0);
@@ -65,28 +59,41 @@ export const Navbar = ({
 
     if (path !== pastPath.current) {
       pastPath.current = path;
-      for (const ref in routeRefs) {
+      for (const ref in routeRefs.current) {
         if (ref !== path) {
-          routeRefs[ref]?.current?.classList.remove("text-palette-blue");
-          routeRefs[ref]?.current?.classList.add("text-white");
+          routeRefs.current[ref]?.classList.remove("text-palette-blue");
+          routeRefs.current[ref]?.classList.add("text-white");
         } else {
-          routeRefs[ref]?.current?.classList.add("text-palette-blue");
-          routeRefs[ref]?.current?.classList.remove("text-white");
+          routeRefs.current[ref]?.classList.add("text-palette-blue");
+          routeRefs.current[ref]?.classList.remove("text-white");
         }
       }
     }
   };
 
   useEffect(() => {
+    const routesWithHeight = routes.filter(
+      (route) => route.height !== null && route.height !== undefined,
+    );
+    routesWithHeight.sort((a, b) => (a.height ?? 0) - (b.height ?? 0));
+    setFilteredRoutes(routesWithHeight);
+  }, [routes]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [filteredRoutes]);
+
+  useEffect(() => {
     if (window.location.origin !== env.NEXT_PUBLIC_PROJECT_URL) {
       setRedirect(true);
     }
     window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleScroll);
   }, []);
 
   const handleOpenMenu = () => {
-    // menuRef?.current?.classList?.toggle("hidden");
     buttonRef?.current?.classList?.toggle("rotate-90");
     if (buttonRef?.current?.classList.contains("rotate-90")) {
       menuRef.current?.classList.remove("scale-0");
@@ -94,6 +101,17 @@ export const Navbar = ({
     } else {
       menuRef.current?.classList.add("scale-0");
       menuRef.current?.classList.add("h-0");
+    }
+  };
+
+  const handleLinkClick = (id: string) => {
+    const idNoHash = id.substring(1);
+    const targetElement = document.getElementById(idNoHash);
+
+    if (targetElement) {
+      const offset = 100;
+      const targetPosition = targetElement.offsetTop - offset;
+      window.scrollTo({ top: targetPosition, behavior: "smooth" });
     }
   };
 
@@ -142,7 +160,7 @@ export const Navbar = ({
           </div>
         )}
         <div
-          className="w-full items-center justify-between duration-500 ease-in-out md:order-1 md:flex md:w-fit"
+          className="h-0 w-full scale-0 items-center justify-between duration-500 ease-in-out md:order-1 md:flex md:h-auto md:w-fit md:scale-100"
           id="navbar-sticky"
           ref={menuRef}
         >
@@ -150,8 +168,20 @@ export const Navbar = ({
             {routes.map((route) => (
               <li key={route.path}>
                 <a
-                  href={route.path}
-                  ref={routeRefs[route.path]}
+                  ref={(ref) => {
+                    if (ref && routeRefs.current) {
+                      routeRefs.current[route.path] = ref;
+                    }
+                  }}
+                  // If the link is an id, then add an onClick handler to scroll to the element
+                  {...(route.path.startsWith("#")
+                    ? {
+                        onClick: (e) => {
+                          e.preventDefault();
+                          handleLinkClick(route.path);
+                        },
+                      }
+                    : { href: route.path })}
                   className="block rounded px-3 py-2 text-white duration-500 ease-in-out "
                   aria-current="page"
                 >

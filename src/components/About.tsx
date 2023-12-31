@@ -17,7 +17,7 @@ import { IconList } from "./List/iconList";
 
 export const About = () => {
   return (
-    <Section title="About">
+    <>
       <div className="mb-5 flex flex-row flex-wrap gap-x-3 gap-y-3">
         <p className="mx-3 mt-2 text-justify text-white lg:w-[40%]">
           I am a passionate software developer that looks forward to tackle new
@@ -56,6 +56,6 @@ export const About = () => {
           <IconList list={technologies} />
         </div>
       </div>
-    </Section>
+    </>
   );
 };

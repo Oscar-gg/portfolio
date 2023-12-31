@@ -1,15 +1,112 @@
-import { Navbar } from "~/components/Layout/Navbar";
+import { Navbar, Route } from "~/components/Layout/Navbar";
 import Head from "next/head";
-import { useEffect, useRef, useState } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  cloneElement,
+  ReactNode,
+  Children,
+  Dispatch,
+} from "react";
+import React from "react";
+import { z } from "zod";
+
+const routesDefault: Route[] = [
+  { name: "About", path: "#about" },
+  { name: "Experience", path: "#experience" },
+  { name: "Projects", path: "#projects" },
+  { name: "Contact", path: "/contact" },
+];
+
+const handleResize = ({
+  navBarHeight,
+  routes,
+  setRoutes,
+  sectionRef,
+}: {
+  navBarHeight: number;
+  routes: Route[];
+  setRoutes: Dispatch<React.SetStateAction<Route[]>>;
+  sectionRef: React.MutableRefObject<HTMLDivElement[]>;
+}) => {
+  // Add heights to routes
+  for (let i = 0; i < routes?.length; i++) {
+    if (!sectionRef.current[i]) {
+      continue;
+    }
+
+    const name = routes[i]?.name ?? "";
+    const path = routes[i]?.path ?? "";
+
+    const viewPortPosition = sectionRef.current[i]?.getBoundingClientRect();
+
+    // Element height: scroll height at which the route is highlighted
+    // * Highlight the route once the element is 150px from the bottom of the navbar
+    const elementHeight = viewPortPosition?.top
+      ? viewPortPosition.top + window.scrollY - navBarHeight - 150
+      : 0;
+    routes[i] = {
+      path: path,
+      name: name,
+      height: elementHeight,
+    };
+  }
+  setRoutes(routes);
+};
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   const [navHeight, setNavHeight] = useState(0);
   const spacerRef = useRef<HTMLDivElement>(null);
+  const [routes, setRoutes] = useState<Route[]>(routesDefault);
+  const sectionRef = useRef<HTMLDivElement[]>([]);
+
   useEffect(() => {
     if (spacerRef.current) {
       spacerRef.current.style.height = `${navHeight}px`;
     }
   }, [navHeight]);
+
+  // Add reference to each child, to set the appropriate height dynamically for Navbar color change
+  const refChildren = Children.map(
+    children as React.DetailedReactHTMLElement<{}, HTMLElement>[],
+    (child) => {
+      if (!child.key) {
+        return child;
+      }
+      const childProps = {
+        ref: (ref: HTMLDivElement) => {
+          const index = z.coerce.number().safeParse(child.key);
+
+          if (index.success) {
+            sectionRef.current[index.data] = ref;
+          }
+        },
+      };
+
+      return cloneElement(child, childProps);
+    },
+  );
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      handleResize({
+        navBarHeight: navHeight,
+        routes: routes,
+        setRoutes: setRoutes,
+        sectionRef: sectionRef,
+      });
+    });
+  }, []);
+
+  useEffect(() => {
+    handleResize({
+      navBarHeight: navHeight,
+      routes: routes,
+      setRoutes: setRoutes,
+      sectionRef: sectionRef,
+    });
+  }, [sectionRef]);
 
   return (
     <>
@@ -19,17 +116,9 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar
-        routes={[
-          { name: "About", path: "/about", height: 0 },
-          { name: "Experience", path: "/Experience", height: 20 },
-          { name: "Projects", path: "/projects", height: 30 },
-          { name: "Contact", path: "/contact", height: 40 },
-        ]}
-        setNavHeight={setNavHeight}
-      />
+      <Navbar routes={routes} setNavHeight={setNavHeight} />
       <div ref={spacerRef} className=""></div>
-      {children}
+      {refChildren}
     </>
   );
 };

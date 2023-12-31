@@ -1,19 +1,22 @@
 import React from "react";
 
-export const Section = ({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) => {
-  return (
-    <div className="flex flex-col px-10 mb-16">
-      <div>
-        <h2 className="mb-4 text-4xl font-bold text-secondary">{title}</h2>
-        <hr className="solid mb-3" />
-        {children}
+export const Section = React.forwardRef(
+  (
+    {
+      title,
+      children,
+      id,
+    }: { title: string; children: React.ReactNode; id: string },
+    ref: React.ForwardedRef<HTMLDivElement>,
+  ) => {
+    return (
+      <div className="mb-16 flex flex-col px-10" ref={ref} id={id}>
+        <div>
+          <h2 className="mb-4 text-4xl font-bold text-secondary">{title}</h2>
+          <hr className="solid mb-3" />
+          {children}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  },
+);
