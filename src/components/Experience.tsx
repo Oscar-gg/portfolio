@@ -12,6 +12,7 @@ import {
 import { RefObject, useEffect, useRef, useState } from "react";
 import { ExperienceCard } from "./card/experienceCard";
 import { Button } from "./ui/button";
+import { twMerge } from "tailwind-merge";
 
 const handleSelected = ({
   index,
@@ -61,7 +62,10 @@ export const Experience = () => {
               ref={(ref) => {
                 if (ref) buttonReferences.current[index] = ref;
               }}
-              className=" text-white duration-300 hover:bg-zinc-900"
+              className={twMerge(
+                "text-white duration-300 hover:bg-zinc-900",
+                index === 0 && "border-2",
+              )}
             >
               {element}
             </Button>

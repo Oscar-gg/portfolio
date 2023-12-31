@@ -35,3 +35,21 @@ export const experienceSchema = z.object({
     }),
   ),
 });
+
+export const projectsSchema = z.object({
+  projects: z.array(
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      date: z.string(),
+      links: z.array(z.object({ path: z.string(), description: z.string() })),
+      images: z.array(
+        z.object({
+          path: z.string(),
+          description: z.string(),
+        }),
+      ),
+      technologies: z.array(z.string()),
+    }),
+  ),
+});
