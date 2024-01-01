@@ -3,7 +3,8 @@
     {
       "title": "Project 1",
       "description": "This is project 1",
-      "date": "Aug 2022",
+      "dateStart": "Aug 2022",
+      "dateEnd": "Aug 2022",
       "links": [
         {
           "path": "https://github.com/RoBorregos",
@@ -23,7 +24,8 @@
     {
       "title": "Project 2",
       "description": "This is project 1",
-      "date": "Aug 2022",
+      "dateStart": "2022-1-10",
+      "dateEnd": "2022-2-20",
       "links": [
         {
           "path": "https://github.com/RoBorregos",

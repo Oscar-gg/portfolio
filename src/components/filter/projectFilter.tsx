@@ -11,6 +11,7 @@ import {
 
 import { Input } from "~/components/ui/input";
 import { technologiesOptions } from "~/data/typed/objects";
+import { z } from "zod";
 
 const customStyles = {
   control: (provided: any, state: any) => ({
@@ -100,16 +101,20 @@ export const ProjectFilter = ({
 
       if (!searchMatch) return false;
 
+      const dateSchema = z.string().pipe(z.coerce.date());
+      const afterDate = dateSchema.safeParse(filterState.after);
+      const beforeDate = dateSchema.safeParse(filterState.before);
+
+      // If the date cant be parsed, consider it as a match (e.g. empty string)
       const afterMatch =
-        filterState.after === "" || project.date >= filterState.after;
+        !afterDate.success || afterDate.data <= project.dateEnd;
 
       const beforeMatch =
-        filterState.before === "" || project.date <= filterState.before;
+        !beforeDate.success || beforeDate.data >= project.dateStart;
 
       return technologiesMatch && searchMatch && afterMatch && beforeMatch;
     });
     setFilteredProjects(filterProjects);
-    console.log(filterProjects);
   }, [filterState]);
 
   return (

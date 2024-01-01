@@ -1,13 +1,33 @@
 import { ProjectCard, type ProjectInfo } from "~/components/card/projectCard";
 
-export const ProjectList = ({ projects, hasFilters }: { projects: ProjectInfo[], hasFilters: boolean }) => {
+export const ProjectList = ({
+  projects,
+  hasFilters,
+  sortDate = true,
+}: {
+  projects: ProjectInfo[];
+  hasFilters: boolean;
+  sortDate?: boolean;
+}) => {
+  if (sortDate) {
+    projects.sort((a, b) => {
+      if (a.dateEnd === null) {
+        return 1;
+      }
+      if (b.dateEnd === null) {
+        return -1;
+      }
+      return b.dateEnd.getTime() - a.dateEnd.getTime();
+    });
+  }
   const visibleProjects = projects.slice(0, 7);
 
   return (
     <div>
       {projects.length !== visibleProjects.length && (
-        <p className="text-white mb-4">
-          Showing {visibleProjects.length} of {projects.length} {hasFilters && "filtered"} projects.
+        <p className="mb-4 text-white">
+          Showing {visibleProjects.length} of {projects.length}{" "}
+          {hasFilters && "filtered"} projects.
         </p>
       )}
       <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">

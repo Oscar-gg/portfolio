@@ -25,12 +25,19 @@ export interface LinkInfo {
 export interface ProjectInfo {
   title: string;
   description: string;
-  date: string;
+  dateStart: Date;
+  dateEnd: Date;
   links: LinkInfo[];
   images: ImageInfo[];
   technologies: string[];
   className?: string;
 }
+
+const dateOptions = {
+  year: "2-digit",
+  month: "numeric",
+  day: "numeric",
+} as const;
 
 export const ProjectCard = ({
   projectInfo,
@@ -38,14 +45,23 @@ export const ProjectCard = ({
   projectInfo: ProjectInfo;
   className?: string;
 }) => {
-  const { title, description, date, links, images, technologies } = projectInfo;
+  const {
+    title,
+    description,
+    dateStart,
+    dateEnd,
+    links,
+    images,
+    technologies,
+  } = projectInfo;
 
   return (
     <Card className=" h-fit bg-black">
       <CardContent className="flex h-fit flex-col gap-3 pb-0 text-white">
         <div className="flex flex-col items-center">
           <p className="ml-auto mt-3 whitespace-nowrap text-palette-blue">
-            {date}
+            {dateStart.toLocaleDateString(undefined, dateOptions)} -{" "}
+            {dateEnd.toLocaleDateString(undefined, dateOptions)}
           </p>
           <h4 className="text-4xl">{title}</h4>
         </div>

@@ -41,7 +41,8 @@ export const projectsSchema = z.object({
     z.object({
       title: z.string(),
       description: z.string(),
-      date: z.string(),
+      dateStart: z.string().pipe(z.coerce.date()),
+      dateEnd: z.string().pipe(z.coerce.date()),
       links: z.array(z.object({ path: z.string(), description: z.string() })),
       images: z.array(
         z.object({
