@@ -9,7 +9,8 @@ import { Contact } from "~/components/Contact";
 export default function HomePage() {
   return (
     <Layout>
-      <Home />
+      {/* Pass Home key to add navHeight prop when cloning child */}
+      <Home key="home" />
       {/* Ids should match path specified in the Navbar */}
       {/* Keys must match index of path in route array passed to the layout */}
       <Section title="About" key="0" id="about">

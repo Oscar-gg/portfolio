@@ -74,6 +74,12 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       if (!child.key) {
         return child;
       }
+      if (child.key === "home") {
+        const childProps = {
+          navBarHeight: navHeight,
+        };
+        return cloneElement(child, childProps);
+      }
       const childProps = {
         ref: (ref: HTMLDivElement) => {
           const index = z.coerce.number().safeParse(child.key);
