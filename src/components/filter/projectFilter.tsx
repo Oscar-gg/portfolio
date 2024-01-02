@@ -91,11 +91,13 @@ export const ProjectFilter = ({
           return project.technologies.includes(technology.value);
         });
       if (!technologiesMatch) return false;
+
+      const descriptionString = project.description.join(" ");
       const searchMatch =
         project.title
           .toLowerCase()
           .includes(filterState.search.toLowerCase()) ||
-        project.description
+        descriptionString
           .toLowerCase()
           .includes(filterState.search.toLowerCase());
 
