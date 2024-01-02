@@ -37,16 +37,16 @@ const handleResize = (
 
   if (elements.current) {
     let containerSize = 0;
-    if (elements.current["content"]) {
-      containerSize = elements.current["content"].clientHeight;
+    if (elements.current.content) {
+      containerSize = elements.current.content.clientHeight;
     }
     const spacerSize = (screenHeight - containerSize) / 2;
-    if (elements.current["top"]) {
+    if (elements.current.top) {
       if (spacerSize - navBarHeight >= 0)
-        elements.current["top"].style.height = `${spacerSize - navBarHeight}px`;
+        elements.current.top.style.height = `${spacerSize - navBarHeight}px`;
     }
-    if (elements.current["bottom"]) {
-      elements.current["bottom"].style.height = `${spacerSize}px`;
+    if (elements.current.bottom) {
+      elements.current.bottom.style.height = `${spacerSize}px`;
     }
   }
 };
@@ -72,17 +72,17 @@ export const Home = ({ navBarHeight = 0 }: { navBarHeight?: number }) => {
     <div>
       <div
         ref={(ref) => {
-          if (ref) spacerRef.current["top"] = ref;
+          if (ref) spacerRef.current.top = ref;
         }}
       ></div>
       <div
         ref={(ref) => {
-          if (ref) spacerRef.current["content"] = ref;
+          if (ref) spacerRef.current.content = ref;
         }}
-        className="bg-background flex flex-col justify-start align-top"
+        className="flex flex-col items-center"
       >
-        <h2 className="mb-2 ml-[20%] text-2xl text-secondary">Hi, I'm</h2>
-        <h2 className="mb-10 ml-[20%] text-5xl text-secondary">
+        <h2 className="text-2xl text-secondary">Hi, I'm</h2>
+        <h2 className="mb-10 text-center text-5xl text-secondary">
           <div
             className="group inline"
             onMouseEnter={() => handleMouseEnter("O", letterRefs, pastLetter)}
@@ -98,7 +98,7 @@ export const Home = ({ navBarHeight = 0 }: { navBarHeight?: number }) => {
             scar{" "}
           </div>
           <div
-            className="group inline"
+            className="group inline "
             onMouseEnter={() => handleMouseEnter("A", letterRefs, pastLetter)}
           >
             <span
@@ -127,7 +127,7 @@ export const Home = ({ navBarHeight = 0 }: { navBarHeight?: number }) => {
           </div>
         </h2>
 
-        <div className="ml-[20%] flex flex-row gap-x-4 gap-y-4 ">
+        <div className="flex flex-row gap-x-4 gap-y-4 ">
           <a href="/pdfs/Oscar_Arreola_Resume.pdf" target="_blank">
             <button className="group rounded-lg bg-white p-2 text-lg font-semibold">
               Resume
@@ -138,7 +138,7 @@ export const Home = ({ navBarHeight = 0 }: { navBarHeight?: number }) => {
       </div>
       <div
         ref={(ref) => {
-          if (ref) spacerRef.current["bottom"] = ref;
+          if (ref) spacerRef.current.bottom = ref;
         }}
       ></div>
     </div>

@@ -42,9 +42,9 @@ const handleResize = ({
     const viewPortPosition = sectionRef.current[i]?.getBoundingClientRect();
 
     // Element height: scroll height at which the route is highlighted
-    // * Highlight the route once the element is 150px from the bottom of the navbar
+    // * Highlight the route once the element is 200px from the bottom of the navbar
     const elementHeight = viewPortPosition?.top
-      ? viewPortPosition.top + window.scrollY - navBarHeight - 150
+      ? viewPortPosition.top + window.scrollY - navBarHeight - 200
       : 0;
     routes[i] = {
       path: path,
@@ -95,6 +95,12 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
   );
 
   useEffect(() => {
+    handleResize({
+      navBarHeight: navHeight,
+      routes: routes,
+      setRoutes: setRoutes,
+      sectionRef: sectionRef,
+    });
     window.addEventListener("resize", () => {
       handleResize({
         navBarHeight: navHeight,
@@ -103,15 +109,16 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         sectionRef: sectionRef,
       });
     });
-  }, []);
-
-  useEffect(() => {
-    handleResize({
-      navBarHeight: navHeight,
-      routes: routes,
-      setRoutes: setRoutes,
-      sectionRef: sectionRef,
-    });
+    return () => {
+      window.removeEventListener("resize", () => {
+        handleResize({
+          navBarHeight: navHeight,
+          routes: routes,
+          setRoutes: setRoutes,
+          sectionRef: sectionRef,
+        });
+      });
+    };
   }, [sectionRef]);
 
   return (

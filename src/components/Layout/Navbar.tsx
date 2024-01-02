@@ -22,7 +22,6 @@ export const Navbar = ({
   setNavHeight: Dispatch<SetStateAction<number>>;
 }) => {
   const [redirect, setRedirect] = useState(false);
-  const [filteredRoutes, setFilteredRoutes] = useState<Route[]>([]);
   const [displayButton, setDisplayButton] = useState(false);
 
   const menuRef = useRef<HTMLDivElement>(null);
@@ -41,12 +40,13 @@ export const Navbar = ({
       menuRef.current?.classList.remove("scale-0");
     }
   };
+
   const handleScroll = () => {
     let max = -1;
     let path = "";
     const scrollY = window.scrollY;
 
-    for (const route of filteredRoutes) {
+    for (const route of routes) {
       if (
         route?.height !== undefined &&
         scrollY >= route.height &&
@@ -72,25 +72,21 @@ export const Navbar = ({
   };
 
   useEffect(() => {
-    const routesWithHeight = routes.filter(
-      (route) => route.height !== null && route.height !== undefined,
-    );
-    routesWithHeight.sort((a, b) => (a.height ?? 0) - (b.height ?? 0));
-    setFilteredRoutes(routesWithHeight);
-  }, [routes]);
-
-  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [filteredRoutes]);
+  }, [routes]);
 
   useEffect(() => {
     if (window.location.origin !== env.NEXT_PUBLIC_PROJECT_URL) {
       setRedirect(true);
     }
     window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const handleOpenMenu = () => {
@@ -122,7 +118,9 @@ export const Navbar = ({
     >
       <div className="flex max-w-screen-xl flex-wrap items-center justify-between p-4">
         <a
-          {...(redirect ? { href: env.NEXT_PUBLIC_PROJECT_URL } : {href: "#"})}
+          {...(redirect
+            ? { href: env.NEXT_PUBLIC_PROJECT_URL }
+            : { href: "#" })}
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <span className="self-center whitespace-nowrap text-2xl font-semibold text-white">

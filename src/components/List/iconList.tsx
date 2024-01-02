@@ -16,7 +16,7 @@ export const IconList = ({
   return (
     <div
       className={twMerge(
-        "grid grid-cols-2 flex-row  flex-wrap gap-3 rounded-md lg:grid-cols-4",
+        "grid-cols-1 grid md:grid-cols-2 flex-row  flex-wrap gap-3 rounded-md lg:grid-cols-3 xl:grid-cols-4",
         className,
       )}
     >
@@ -31,7 +31,7 @@ export const IconList = ({
             alt={element.title}
           />
           <div className="flex w-full flex-col items-center justify-between align-middle text-white">
-            <h3 className="text-xl md:text-3xl mt-8">{element.title}</h3>
+            <h3 className="mt-8 text-xl md:text-3xl">{element.title}</h3>
             <p>{element.description}</p>
           </div>
         </div>

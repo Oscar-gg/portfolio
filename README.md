@@ -13,8 +13,8 @@ Technologies used:
 
 ### TODO:
 
-- [ ] Mobile Responsiveness
-- [ ] Validate date format in JSON
+- [1/2] Mobile Responsiveness
+- [X] Validate date format in JSON
 - [ ] Hobbies, timeline, recent activity sections.
   - [ ] recent activity: github, leetcode, codeforces, linkedin, spotify,
 - RAG pipeline for related Q&A
