@@ -24,7 +24,7 @@ export interface LinkInfo {
 
 export interface ProjectInfo {
   title: string;
-  description: string;
+  description: string[];
   dateStart: Date;
   dateEnd: Date;
   links: LinkInfo[];
@@ -59,7 +59,7 @@ export const ProjectCard = ({
     <Card className=" h-fit bg-black">
       <CardContent className="flex h-fit flex-col gap-3 pb-0 text-white">
         <div className="flex flex-col items-center">
-          <p className="ml-auto mt-3 whitespace-nowrap text-palette-blue">
+          <p className="mb-3 ml-auto mt-3 whitespace-nowrap text-palette-blue">
             {dateStart.toLocaleDateString(undefined, dateOptions)} -{" "}
             {dateEnd.toLocaleDateString(undefined, dateOptions)}
           </p>
@@ -72,7 +72,9 @@ export const ProjectCard = ({
             alt={images[0]?.description}
           />
           <div>
-            <p className="">{description}</p>
+            {description.map((paragraph, index) => (
+              <p className="mb-4" key={index}>{paragraph}</p>
+            ))}
           </div>
         </div>
         {(links.length > 0 || images.length > 1 || technologies.length > 0) && (

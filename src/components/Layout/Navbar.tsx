@@ -22,7 +22,6 @@ export const Navbar = ({
   setNavHeight: Dispatch<SetStateAction<number>>;
 }) => {
   const [redirect, setRedirect] = useState(false);
-  const [displayButton, setDisplayButton] = useState(false);
 
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -32,13 +31,6 @@ export const Navbar = ({
 
   const handleResize = () => {
     setNavHeight(barRef.current?.clientHeight ?? 0);
-    if (window.innerWidth < 768) {
-      setDisplayButton(true);
-      menuRef.current?.classList.add("scale-0");
-    } else {
-      setDisplayButton(false);
-      menuRef.current?.classList.remove("scale-0");
-    }
   };
 
   const handleScroll = () => {
@@ -127,36 +119,34 @@ export const Navbar = ({
             OAA
           </span>
         </a>
-        {displayButton && (
-          <div className="flex space-x-3 rtl:space-x-reverse md:order-2 md:space-x-0">
-            <button
-              data-collapse-toggle="navbar-sticky"
-              type="button"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 duration-500 ease-out hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
-              aria-controls="navbar-sticky"
-              aria-expanded="false"
-              onClick={handleOpenMenu}
-              ref={buttonRef}
-            >
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className="h-5 w-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 17 14"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M1 1h15M1 7h15M1 13h15"
-                />
-              </svg>
-            </button>
-          </div>
-        )}
+
+        <button
+          data-collapse-toggle="navbar-sticky"
+          type="button"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 duration-500 ease-out hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
+          aria-controls="navbar-sticky"
+          aria-expanded="false"
+          onClick={handleOpenMenu}
+          ref={buttonRef}
+        >
+          <span className="sr-only">Open main menu</span>
+          <svg
+            className="h-5 w-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+        </button>
+
         <div
           className="h-0 w-full scale-0 items-center justify-between duration-500 ease-in-out md:order-1 md:flex md:h-auto md:w-fit md:scale-100"
           id="navbar-sticky"

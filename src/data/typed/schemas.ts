@@ -2,7 +2,7 @@ import { z } from "zod";
 
 const listElementSchema = z.object({
   title: z.string(),
-  description: z.string(),
+  description: z.string().optional(),
   image: z.string(),
 });
 
@@ -31,7 +31,7 @@ export const experienceSchema = z.object({
         }),
       ),
       links: z.array(z.object({ path: z.string(), description: z.string() })),
-      description: z.string(),
+      description: z.array(z.string()),
     }),
   ),
 });
@@ -40,7 +40,7 @@ export const projectsSchema = z.object({
   projects: z.array(
     z.object({
       title: z.string(),
-      description: z.string(),
+      description: z.array(z.string()),
       dateStart: z.string().pipe(z.coerce.date()),
       dateEnd: z.string().pipe(z.coerce.date()),
       links: z.array(z.object({ path: z.string(), description: z.string() })),

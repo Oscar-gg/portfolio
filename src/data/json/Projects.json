@@ -2,9 +2,9 @@
   "projects": [
     {
       "title": "Project 1",
-      "description": "This is project 1",
-      "dateStart": "Aug 2022",
-      "dateEnd": "2022-2-21",
+      "description": ["This is project 1", "aa"],
+      "dateStart": "2022 2 21",
+      "dateEnd": "2022 2 21",
       "links": [
         {
           "path": "https://github.com/RoBorregos",
@@ -23,9 +23,9 @@
     },
     {
       "title": "Project 2",
-      "description": "This is project 1",
-      "dateStart": "2022-1-10",
-      "dateEnd": "2022-2-20",
+      "description": ["This is project 1"],
+      "dateStart": "2022 1 10",
+      "dateEnd": "2022 2 20",
       "links": [
         {
           "path": "https://github.com/RoBorregos",

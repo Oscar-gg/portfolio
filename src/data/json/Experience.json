@@ -1,8 +1,34 @@
 {
   "experience": [
     {
+      "title": "Dataexpress",
+      "date": "Dec 2023 - Present",
+      "position": "Software Developer",
+      "images": [
+        {
+          "path": "/Experience/Dataexpress.png",
+          "description": "Dataexpress Logo"
+        },
+        {
+          "path": "/Experience/DataexpressLanding.png",
+          "description": "Dataexpress' landing page"
+        }
+      ],
+      "links": [
+        {
+          "path": "https://www.linkedin.com/company/data-express/",
+          "description": "Dataexpress Linked in"
+        }
+      ],
+      "description": [
+        "Dataexpress is a No-Code Data Pipeline ELT Platform that allows you to connect your data sources and destinations in minutes.",
+        "Working on the front & backend, using Next.js, Node.js and Python.",
+        "Implemented a destination connector for Google Cloud Storage while adding validation, IAM permission testing, and feature documentation. Built a source connector for Facebook Ads using the Facebook Marketing API."
+      ]
+    },
+    {
       "title": "RoBorregos",
-      "date": "2021 - Present",
+      "date": "Oct 2022 - Present",
       "position": "Software Developer",
       "images": [
         { "path": "/Dataexpress.png", "description": "AAAA" },
@@ -14,16 +40,55 @@
           "description": "Roborregos' github"
         },
         {
-          "path": "docs",
+          "path": "https://docs.rbrgs.com/",
           "description": "Roborregos' docs"
+        },
+        {
+          "path": "https://roborregos.com/",
+          "description": "Roborregos' website"
         }
       ],
-      "description": "RoBorregos is the representative robotics club from Tecnológico de Monterrey, Campus Monterrey. As part of the team, ..."
+      "description": [
+        "Representative Robotics Team from Tecnológico de Monterrey, Campus Monterrey.",
+        "Participated in national robotics competitions (Robocup Maze, Robocup@Home), representing ITESM.",
+        "Designed and developed a speech to text pipeline (ROS, Python) for an xArm 6 robot, to execute voice commands as interpreted through a Jetson Xavier, using locally runned STT (Whisper) and VAD (Silero VAD) ML models.",
+        "Active member of Web development, Social Impact, Robocup@Home (HRI and Nav), and RCJ Maze mentoring teams."
+      ]
     },
     {
-      "title": "Dataexpress",
-      "date": "2021 - Present",
+      "title": "Virtual Learning Center",
+      "date": "Summer 2023",
       "position": "Software Developer",
+      "images": [
+        { "path": "/Experience/CVA.png", "description": "CVA Logo" },
+        { "path": "/Experience/CVA_Course.png", "description": "Produced Course" },
+        { "path": "/Experience/ScriptLogs.png", "description": "Logs of script that removed unused files" }
+      ],
+      "links": [
+        {
+          "path": "https://www.cca.org.mx/CCA_cursos/inmigrantes_saludUSA_v2/index.html",
+          "description": "Produced Course"
+        },
+        {
+          "path": "https://www.centroscomunitariosdeaprendizaje.org.mx/",
+          "description": "CVA webstite"
+        },
+        {
+          "path": "https://github.com/Oscar-gg/cva_scripts",
+          "description": "Utility / automation scripts"
+        }
+      ],
+      "description": [
+        "Virtual Learning Center (CVA) is a social program that promotes access to quality education through a virtual learning community offering training via courses and free educational resources.",
+        "Built a course on the American healthcare system, designed to help immigrants leverage the existing programs and resources available to them.",
+        "Designed and implemented over 60 responsive pages of content, and 4 activities using Bootstrap and JavaScript.",
+        "Implemented utility scripts to automate common tasks (i.e, compress images and eliminate dependencies efficiently). Shared the scripts to other programmers creating courses for the organization, to streamline production."
+      ]
+    },
+    {
+      "title": "MAE (Academic mentor of excellence)",
+      "date": "Feb 2023 - Present",
+      "position": "Tutor & Software Developer",
       "images": [
         { "path": "", "description": "" },
         { "path": "", "description": "" }
@@ -38,67 +103,9 @@
           "description": "Roborregos' docs"
         }
       ],
-      "description": "RoBorregos is a robotics club from Tecnológico de Monterrey, Campus Monterrey. As part of the team, ..."
-    },
-    {
-      "title": "RoBorregos1",
-      "date": "2021 - Present",
-      "position": "Software Developer",
-      "images": [
-        { "path": "", "description": "" },
-        { "path": "", "description": "" }
-      ],
-      "links": [
-        {
-          "path": "https://github.com/RoBorregos",
-          "description": "Roborregos' github"
-        },
-        {
-          "path": "docs",
-          "description": "Roborregos' docs"
-        }
-      ],
-      "description": "RoBorregos is a robotics club from Tecnológico de Monterrey, Campus Monterrey. As part of the team, ..."
-    },
-    {
-      "title": "RoBorregos2",
-      "date": "2021 - Present",
-      "position": "Software Developer",
-      "images": [
-        { "path": "", "description": "" },
-        { "path": "", "description": "" }
-      ],
-      "links": [
-        {
-          "path": "https://github.com/RoBorregos",
-          "description": "Roborregos' github"
-        },
-        {
-          "path": "docs",
-          "description": "Roborregos' docs"
-        }
-      ],
-      "description": "RoBorregos is a robotics club from Tecnológico de Monterrey, Campus Monterrey. As part of the team, ..."
-    },
-    {
-      "title": "RoBorregos3",
-      "date": "2021 - Present",
-      "position": "Software Developer",
-      "images": [
-        { "path": "", "description": "" },
-        { "path": "", "description": "" }
-      ],
-      "links": [
-        {
-          "path": "https://github.com/RoBorregos",
-          "description": "Roborregos' github"
-        },
-        {
-          "path": "docs",
-          "description": "Roborregos' docs"
-        }
-      ],
-      "description": "RoBorregos is a robotics club from Tecnológico de Monterrey, Campus Monterrey. As part of the team, ..."
+      "description": [
+        "RoBorregos is a robotics club from Tecnológico de Monterrey, Campus Monterrey. As part of the team, ..."
+      ]
     }
   ]
 }

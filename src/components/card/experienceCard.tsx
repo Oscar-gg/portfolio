@@ -31,7 +31,7 @@ export const ExperienceCard = ({
   className,
 }: {
   title: string;
-  description: string;
+  description: string[];
   images: ImageInfo[];
   date: string;
   position: string;
@@ -48,7 +48,7 @@ export const ExperienceCard = ({
       {/* On large screens */}
       <div className="hidden w-full flex-row items-end justify-between space-x-4 align-middle  md:flex">
         <p className="whitespace-nowrap text-palette-blue">{date}</p>
-        <h4 className="text-4xl ">{title}</h4>
+        <h4 className="text-4xl text-center ">{title}</h4>
         <p className="whitespace-nowrap">{position}</p>
       </div>
 
@@ -60,14 +60,16 @@ export const ExperienceCard = ({
           <p>{position}</p>
         </div>
       </div>
-      <div className="mt-3 flex flex-col items-center gap-3 md:mt-9 md:flex-row md:items-start">
+      <div className="mt-3 flex flex-col items-center gap-6 md:mt-9 md:flex-row md:items-start">
         <img
-          className="w-fit"
+          className="w-full md:w-[40%]"
           src={images[0] ? images[0].path : " "}
           alt={images[0]?.description}
         />
         <div>
-          <p className="">{description}</p>
+          {description.map((paragraph, index) => (
+            <p className="mb-4" key={index}>{paragraph}</p>
+          ))}
         </div>
       </div>
       {(links.length > 0 || images.length > 1) && (

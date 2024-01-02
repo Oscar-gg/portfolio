@@ -30,29 +30,87 @@
     {
       "title": "Javascript",
       "description": "1 year",
-      "image": "/Dataexpress.png"
+      "image": "/About/Javascript.png"
     },
     {
       "title": "Typescript",
       "description": "1 year",
-      "image": "/Dataexpress.png"
+      "image": "/About/Typescript.png"
     },
     {
       "title": "Bash",
       "description": "1 year",
-      "image": "/Dataexpress.png"
+      "image": "/About/Bash.png"
     }
   ],
 
   "technologies": [
     {
-      "title": "Python",
-      "description": "80",
+      "title": "Git",
       "image": "/Dataexpress.png"
     },
     {
-      "title": "Arduino",
-      "description": "2 years",
+      "title": "React",
+      "image": "/About/Arduino.png"
+    },
+    {
+      "title": "Next.js",
+      "image": "/About/Arduino.png"
+    },
+    {
+      "title": "Prisma",
+      "image": "/About/Arduino.png"
+    },
+    {
+      "title": "TRPC",
+      "image": "/About/Arduino.png"
+    },
+    {
+      "title": "Tailwind",
+      "image": "/About/Arduino.png"
+    },
+    {
+      "title": "NextAuth",
+      "image": "/About/Arduino.png"
+    },
+    {
+      "title": "R",
+      "image": "/About/Arduino.png"
+    },
+    {
+      "title": "AutoHotKey",
+      "image": "/About/Arduino.png"
+    },
+    {
+      "title": "Ubuntu",
+      "image": "/About/Arduino.png"
+    },
+    {
+      "title": "SQL",
+      "image": "/About/Arduino.png"
+    },
+    {
+      "title": "AWS",
+      "image": "/About/Arduino.png"
+    },
+    {
+      "title": "Google Cloud",
+      "image": "/About/Arduino.png"
+    },
+    {
+      "title": "OpenAI API",
+      "image": "/About/Arduino.png"
+    },
+    {
+      "title": "Whisper",
+      "image": "/About/Arduino.png"
+    },
+    {
+      "title": "Kivy",
+      "image": "/About/Arduino.png"
+    },
+    {
+      "title": "VirtualBox",
       "image": "/About/Arduino.png"
     }
   ]
