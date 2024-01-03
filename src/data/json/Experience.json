@@ -31,8 +31,19 @@
       "date": "Oct 2022 - Present",
       "position": "Software Developer",
       "images": [
-        { "path": "/Dataexpress.png", "description": "AAAA" },
-        { "path": "", "description": "" }
+        { "path": "/Roborregos.png", "description": "Roborregos's logo." },
+        {
+          "path": "/Experience/MazeRobot.png",
+          "description": "RescueMaze robot (2023)"
+        },
+        {
+          "path": "/Experience/Maze.jpg",
+          "description": "On our trip to compete at RescueMaze in Xalapa."
+        },
+        {
+          "path": "/Experience/RescueMaze.png",
+          "description": "RescueMaze regional competition."
+        }
       ],
       "links": [
         {
@@ -51,7 +62,7 @@
       "description": [
         "Representative Robotics Team from Tecnológico de Monterrey, Campus Monterrey.",
         "Participated in national robotics competitions (Robocup Maze, Robocup@Home), representing ITESM.",
-        "Designed and developed a speech to text pipeline (ROS, Python) for an xArm 6 robot, to execute voice commands as interpreted through a Jetson Xavier, using locally runned STT (Whisper) and VAD (Silero VAD) ML models.",
+        "Integrated locally runned STT (Whisper) and VAD (Silero VAD) ML models to a speech to text pipeline (ROS, Python) for an xArm 6 robot, to execute voice commands as interpreted through a Jetson Xavier.",
         "Active member of Web development, Social Impact, Robocup@Home (HRI and Nav), and RCJ Maze mentoring teams."
       ]
     },
@@ -61,8 +72,14 @@
       "position": "Software Developer",
       "images": [
         { "path": "/Experience/CVA.png", "description": "CVA Logo" },
-        { "path": "/Experience/CVA_Course.png", "description": "Produced Course" },
-        { "path": "/Experience/ScriptLogs.png", "description": "Logs of script that removed unused files" }
+        {
+          "path": "/Experience/CVA_Course.png",
+          "description": "Produced Course"
+        },
+        {
+          "path": "/Experience/ScriptLogs.png",
+          "description": "Logs of utility scripts"
+        }
       ],
       "links": [
         {
@@ -90,21 +107,22 @@
       "date": "Feb 2023 - Present",
       "position": "Tutor & Software Developer",
       "images": [
-        { "path": "", "description": "" },
-        { "path": "", "description": "" }
+        { "path": "/Experience/MAE.png", "description": "MAE's logo" },
+        {
+          "path": "/Experience/MAE2.png",
+          "description": "Related instagram post from MAEs"
+        }
       ],
       "links": [
         {
-          "path": "https://github.com/RoBorregos",
-          "description": "Roborregos' github"
-        },
-        {
-          "path": "docs",
-          "description": "Roborregos' docs"
+          "path": "https://www.instagram.com/maestec/",
+          "description": "MAE instagram"
         }
       ],
       "description": [
-        "RoBorregos is a robotics club from Tecnológico de Monterrey, Campus Monterrey. As part of the team, ..."
+        "MAEs is an organization that provides academic support to collegue students in a variety of subjects.",
+        "Providing academic mentoring to students in mathematics, computer science, and physics courses.",
+        "Aided in the MAE webpage redesign to enhance user experience and streamline scheduling for students."
       ]
     }
   ]
