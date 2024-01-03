@@ -17,14 +17,14 @@ import { IconList } from "./List/iconList";
 export const About = () => {
   return (
     <>
-      <div className="mb-5 flex flex-row flex-wrap gap-x-3 gap-y-3">
+      <div className="mb-10 flex flex-row flex-wrap gap-x-3 gap-y-3">
         <p className="mx-3 mt-2 text-justify text-white lg:w-[40%]">
           I am a passionate software developer that looks forward to tackle new
           challenges and get involved in a variety of projects. I am eager to
           keep learning about new technologies and inspired to work in
           fast-paced environments. I have experience in web and mobile
           development and have been able to develop my skills by being member of
-          Dataexpress, RoBorregos, and communitary service initiatives.
+          Dataexpress, RoBorregos, and by working on a variety of projects.
         </p>
         <div className="flex w-full flex-row flex-wrap justify-around gap-x-3 gap-y-3 lg:w-[50%]">
           {logos.map((logo) => (

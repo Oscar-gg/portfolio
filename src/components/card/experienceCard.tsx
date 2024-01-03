@@ -1,4 +1,9 @@
-import { Dialog, DialogContent, DialogTrigger } from "~/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogOverlay,
+  DialogTrigger,
+} from "~/components/ui/dialog";
 
 import {
   Accordion,
@@ -48,7 +53,7 @@ export const ExperienceCard = ({
       {/* On large screens */}
       <div className="hidden w-full flex-row items-end justify-between space-x-4 align-middle  md:flex">
         <p className="whitespace-nowrap text-palette-blue">{date}</p>
-        <h4 className="text-4xl text-center ">{title}</h4>
+        <h4 className="text-center text-4xl ">{title}</h4>
         <p className="whitespace-nowrap">{position}</p>
       </div>
 
@@ -60,15 +65,17 @@ export const ExperienceCard = ({
           <p>{position}</p>
         </div>
       </div>
-      <div className="mt-3 flex flex-col items-center gap-6 md:mt-9 md:flex-row md:items-start">
+      <div className="mt-3 flex flex-col items-center justify-center gap-6 align-middle md:mt-9 md:flex-row md:items-start">
         <img
           className="w-full md:w-[40%]"
           src={images[0] ? images[0].path : " "}
           alt={images[0]?.description}
         />
-        <div>
+        <div className="mb-auto mt-auto">
           {description.map((paragraph, index) => (
-            <p className="mb-4" key={index}>{paragraph}</p>
+            <p className="mb-4" key={index}>
+              {paragraph}
+            </p>
           ))}
         </div>
       </div>
@@ -86,11 +93,9 @@ export const ExperienceCard = ({
                         <p className="items-center text-lg">See Images</p>
                       </div>
                     </DialogTrigger>
-                    <DialogContent>
-                      <div className="flex flex-col items-center justify-center align-middle">
-                        <h3 className="mb-4 text-2xl text-white">{title}</h3>
-                        <ImageCarousel images={images} />
-                      </div>
+                    <DialogContent className="flex flex-col items-center">
+                      <h3 className="mb-4 text-2xl text-white">{title}</h3>
+                      <ImageCarousel images={images} />
                     </DialogContent>
                   </Dialog>
                 )}

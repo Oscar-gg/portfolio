@@ -62,8 +62,8 @@ export const IconList = ({
     <div>
       <div
         className={cn(
-          "grid grid-cols-1 flex-row flex-wrap gap-3 rounded-md sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
-          size === "small" && "flex",
+          "grid grid-cols-1 flex-row flex-wrap gap-3 rounded-md sm:grid-cols-2 lg:grid-cols-3",
+          size === "small" && "md:flex",
           className,
         )}
       >
