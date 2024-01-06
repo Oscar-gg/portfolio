@@ -27,10 +27,10 @@ const IconItem = ({
   >
     <img
       className={cn(
-        "h-28 w-28 rounded-full",
-        size === "small" && "h-16 w-16",
-        size === "medium" && "h-28 w-28",
-        size === "large" && "h-36 w-36",
+        "h-28 w-auto ",
+        size === "small" && "h-16  w-auto",
+        size === "medium" && "h-28  w-auto",
+        size === "large" && "h-36  w-auto",
       )}
       src={element.image}
       alt={element.title}
@@ -74,7 +74,9 @@ export const IconList = ({
       {detailItems.length > 0 && (
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem className="border-b-0 text-white" value="list-details">
-            <AccordionTrigger>{accordionMessage} ({detailItems.length})</AccordionTrigger>
+            <AccordionTrigger>
+              {accordionMessage} ({detailItems.length})
+            </AccordionTrigger>
             <AccordionContent>
               <div className="flex flex-row flex-wrap gap-3">
                 {detailItems.map((element) => (

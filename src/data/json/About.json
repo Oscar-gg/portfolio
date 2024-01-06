@@ -47,71 +47,71 @@
   "technologies": [
     {
       "title": "Git",
-      "image": "/Dataexpress.png"
+      "image": "/About/Git.png"
     },
     {
       "title": "React",
-      "image": "/About/Arduino.png"
+      "image": "/About/React.png"
     },
     {
       "title": "Next.js",
-      "image": "/About/Arduino.png"
+      "image": "/About/Next.png"
     },
     {
       "title": "Prisma",
-      "image": "/About/Arduino.png"
+      "image": "/About/Prisma.png"
     },
     {
       "title": "TRPC",
-      "image": "/About/Arduino.png"
+      "image": "/About/Trpc.png"
     },
     {
       "title": "Tailwind",
-      "image": "/About/Arduino.png"
+      "image": "/About/Tailwind.png"
     },
     {
       "title": "NextAuth",
-      "image": "/About/Arduino.png"
+      "image": "/About/NextAuth.png"
     },
     {
       "title": "R",
-      "image": "/About/Arduino.png"
+      "image": "/About/R.png"
     },
     {
       "title": "AutoHotKey",
-      "image": "/About/Arduino.png"
+      "image": "/About/AutoHotKey.png"
     },
     {
       "title": "Ubuntu",
-      "image": "/About/Arduino.png"
+      "image": "/About/Ubuntu.png"
     },
     {
       "title": "SQL",
-      "image": "/About/Arduino.png"
+      "image": "/About/SQL.png"
     },
     {
       "title": "AWS",
-      "image": "/About/Arduino.png"
+      "image": "/About/AWS.png"
     },
     {
       "title": "Google Cloud",
-      "image": "/About/Arduino.png"
+      "image": "/About/GCP.png"
     },
     {
       "title": "OpenAI API",
-      "image": "/About/Arduino.png"
+      "image": "/About/OpenAi.png"
     },
     {
       "title": "Whisper",
-      "image": "/About/Arduino.png"
+      "image": "/About/OpenAi.png"
     },
     {
       "title": "Kivy",
-      "image": "/About/Arduino.png"
+      "image": "/About/Kivy.png"
     },
     {
       "title": "VirtualBox",
-      "image": "/About/Arduino.png"
+      "image": "/About/VirtualBox.png"
     }
   ]
 }
