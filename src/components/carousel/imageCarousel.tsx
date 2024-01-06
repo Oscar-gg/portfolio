@@ -32,7 +32,7 @@ export const ImageCarousel = ({ images }: { images: ImageInfo[] }) => {
 
   return (
     <div>
-      <Carousel setApi={setApi} className="w-full max-w-xs">
+      <Carousel setApi={setApi} className="w-full max-w-xs mr-auto ml-auto">
         <CarouselContent>
           {images.map((image) => (
             <CarouselItem key={image.path}>

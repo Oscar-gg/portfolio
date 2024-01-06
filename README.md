@@ -13,7 +13,8 @@ Technologies used:
 
 ### TODO:
 
-- [1/2] Mobile Responsiveness
+- [1/2] Mobile Responsiveness (Imagen carusel)
+- [ ] Add competitions / additonal experience section
 - [X] Validate date format in JSON
 - [ ] Hobbies, timeline, recent activity sections.
   - [ ] recent activity: github, leetcode, codeforces, linkedin, spotify,

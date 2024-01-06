@@ -11,6 +11,10 @@ import { FaExternalLinkAlt, FaImage } from "react-icons/fa";
 import { Card, CardContent } from "~/components/ui/card";
 
 import { ImageCarousel } from "../carousel/imageCarousel";
+import { useState } from "react";
+
+import { MdExpandMore } from "react-icons/md";
+import { MdExpandLess } from "react-icons/md";
 
 export interface ImageInfo {
   path: string;
@@ -55,32 +59,58 @@ export const ProjectCard = ({
     technologies,
   } = projectInfo;
 
+  const [seeMore, setSeeMore] = useState(false);
+
   return (
-    <Card className=" h-fit bg-black">
-      <CardContent className="flex h-fit flex-col gap-3 pb-0 text-white">
-        <div className="flex flex-col items-center">
-          <p className="mb-3 ml-auto mt-3 whitespace-nowrap text-palette-blue">
-            {dateStart.toLocaleDateString(undefined, dateOptions)} -{" "}
-            {dateEnd.toLocaleDateString(undefined, dateOptions)}
-          </p>
-          <h4 className="text-4xl">{title}</h4>
-        </div>
-        <div className="mt-3 flex flex-col items-center gap-3 md:mt-9 md:flex-row md:items-start">
-          <img
-            className="h-44 w-44"
-            src={images[0] ? images[0].path : " "}
-            alt={images[0]?.description}
-          />
+    <Card className="relative h-fit overflow-hidden bg-black">
+      <div
+        style={{
+          backgroundImage: `url('${images[0] ? images[0].path : " "}')`,
+        }}
+        className="h-64 w-full border-[1px] border-white bg-white bg-contain bg-center bg-no-repeat"
+      ></div>
+      <CardContent className="mt-3 flex h-fit flex-col pb-0 text-white">
+        <h4 className="mb-3 text-center text-4xl">{title}</h4>
+        <div className="mt-3 flex flex-col items-center gap-3">
           <div>
-            {description.map((paragraph, index) => (
-              <p className="mb-4" key={index}>{paragraph}</p>
-            ))}
+            {seeMore ? (
+              <>
+                {description.map((paragraph, index) => (
+                  <p className="mb-4" key={index}>
+                    {paragraph}
+                  </p>
+                ))}
+                <MdExpandLess
+                  onClick={() => setSeeMore(false)}
+                  className="ml-auto mr-auto text-palette-blue"
+                  size={35}
+                />
+              </>
+            ) : (
+              <>
+                <p className="mb-4">{description[0]}</p>
+                {description.length > 1 && (
+                  <MdExpandMore
+                    onClick={() => setSeeMore(true)}
+                    className="ml-auto mr-auto text-palette-blue"
+                    size={35}
+                  />
+                )}
+              </>
+            )}
           </div>
         </div>
+
+        <p className="ml-auto mr-4 whitespace-nowrap text-right text-palette-blue">
+          {dateStart.toLocaleDateString(undefined, dateOptions)} -{" "}
+          {dateEnd.toLocaleDateString(undefined, dateOptions)}
+        </p>
+
         {(links.length > 0 || images.length > 1 || technologies.length > 0) && (
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem className="border-b-0" value="item-1">
               <AccordionTrigger>Details</AccordionTrigger>
+
               <AccordionContent>
                 {technologies.length > 0 && (
                   <Accordion type="single" collapsible className="w-full">

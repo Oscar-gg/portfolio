@@ -87,7 +87,7 @@ export const ProjectFilter = ({
     const filterProjects = projects.filter((project) => {
       const technologiesMatch =
         filterState.technologies.length === 0 ||
-        filterState.technologies.some((technology) => {
+        filterState.technologies.every((technology) => {
           return project.technologies.includes(technology.value);
         });
       if (!technologiesMatch) return false;
