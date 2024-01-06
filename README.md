@@ -18,4 +18,4 @@ Technologies used:
 - [X] Validate date format in JSON
 - [ ] Hobbies, timeline, recent activity sections.
   - [ ] recent activity: github, leetcode, codeforces, linkedin, spotify,
-- RAG pipeline for related Q&A
+- [ ] RAG pipeline for related Q&A

@@ -25,22 +25,27 @@ export const ImageCarousel = ({ images }: { images: ImageInfo[] }) => {
     setCurrent(api.selectedScrollSnap() + 1);
 
     api.on("select", () => {
-      console.log("current");
       setCurrent(api.selectedScrollSnap() + 1);
     });
   }, [api]);
 
   return (
-    <div>
-      <Carousel setApi={setApi} className="w-full max-w-xs mr-auto ml-auto">
-        <CarouselContent>
+    <div className="m-2 h-full w-full ">
+      <Carousel setApi={setApi} className="h-full w-full">
+        <CarouselContent className="h-full w-full">
           {images.map((image) => (
-            <CarouselItem key={image.path}>
-              <Card className="bg-black">
-                <CardContent className="flex aspect-square flex-col items-center justify-center gap-3 ">
-                  <img src={image.path} alt={image.path} />
-                  <p className="text-white"> {image.description}</p>
-                </CardContent>
+            <CarouselItem
+              className="h-full max-h-full w-full max-w-full bg-background"
+              key={image.path}
+            >
+              <Card
+                style={{ backgroundImage: `url('${image.path}')` }}
+                className="relative h-full max-h-full bg-background w-full max-w-full bg-contain bg-center bg-no-repeat"
+              >
+                <p className="absolute p-2 bottom-0 left-[50%] translate-x-[-50%] rounded-md bg-background text-center text-white">
+                  {" "}
+                  {image.description}
+                </p>
               </Card>
             </CarouselItem>
           ))}
@@ -48,7 +53,7 @@ export const ImageCarousel = ({ images }: { images: ImageInfo[] }) => {
         <CarouselPrevious className="text-white" />
         <CarouselNext className="text-white" />
       </Carousel>
-      <div className="text-muted-foreground py-2 text-center text-sm">
+      <div className="py-2 text-center text-sm text-muted-foreground">
         Slide {current} of {count}
       </div>
     </div>
