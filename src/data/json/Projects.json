@@ -271,7 +271,17 @@
           "description": "Register a new event"
         }
       ],
-      "technologies": ["Typescript", "Next", "React", "NextAuth", "tRPC", "Tailwind", "Prisma", "Formik", "Supabase"]
+      "technologies": [
+        "Typescript",
+        "Next",
+        "React",
+        "NextAuth",
+        "tRPC",
+        "Tailwind",
+        "Prisma",
+        "Formik",
+        "Supabase"
+      ]
     },
     {
       "title": "Task Register",
@@ -329,5 +339,30 @@
       "technologies": ["Python", "Pyautogui", "AutoHotKey"]
     }
   ],
-  "technologiesOptions": ["Python", "C++", "ROS", "OpenCV", "Tensorflow", "Next"]
+  "technologiesOptions": [
+    "AWS API Gateway",
+    "Android Studio",
+    "Arduino",
+    "AutoHotKey",
+    "Azure AD",
+    "Formik",
+    "Java",
+    "Javascript",
+    "MUI",
+    "Next",
+    "NextAuth",
+    "Node.js",
+    "OpenAI API",
+    "Plasmo",
+    "Prisma",
+    "Pyautogui",
+    "Python",
+    "React",
+    "Supabase",
+    "Tailwind",
+    "Typescript",
+    "Vite",
+    "Websockets",
+    "tRPC"
+  ]
 }
