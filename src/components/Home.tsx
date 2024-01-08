@@ -26,61 +26,13 @@ const handleMouseEnter = (
   }
 };
 
-const handleResize = (
-  elements: RefObject<Record<string, HTMLDivElement>>,
-  navBarHeight: number,
-) => {
-  const screenHeight =
-    window.innerHeight ||
-    document.documentElement.clientHeight ||
-    document.body.clientHeight;
-
-  if (elements.current) {
-    let containerSize = 0;
-    if (elements.current.content) {
-      containerSize = elements.current.content.clientHeight;
-    }
-    const spacerSize = (screenHeight - containerSize) / 2;
-    if (elements.current.top) {
-      if (spacerSize - navBarHeight >= 0)
-        elements.current.top.style.height = `${spacerSize - navBarHeight}px`;
-    }
-    if (elements.current.bottom) {
-      elements.current.bottom.style.height = `${spacerSize}px`;
-    }
-  }
-};
-
-export const Home = ({ navBarHeight = 0 }: { navBarHeight?: number }) => {
+export const Home = () => {
   const letterRefs = useRef<Record<string, RefObject<HTMLSpanElement>>>({});
   const pastLetter = useRef<string>("");
-  const spacerRef = useRef<Record<string, HTMLDivElement>>({});
-
-  useEffect(() => {
-    handleResize(spacerRef, navBarHeight);
-    window.addEventListener("resize", () =>
-      handleResize(spacerRef, navBarHeight),
-    );
-    return () => {
-      window.removeEventListener("resize", () =>
-        handleResize(spacerRef, navBarHeight),
-      );
-    };
-  }, [spacerRef, navBarHeight]);
 
   return (
     <div>
-      <div
-        ref={(ref) => {
-          if (ref) spacerRef.current.top = ref;
-        }}
-      ></div>
-      <div
-        ref={(ref) => {
-          if (ref) spacerRef.current.content = ref;
-        }}
-        className="flex flex-col items-center"
-      >
+      <div className="flex flex-col items-center h-[92vh] justify-center">
         <h2 className="text-2xl text-secondary">Hi, I'm</h2>
         <h2 className="mb-10 text-center text-5xl text-secondary">
           <div
@@ -136,11 +88,6 @@ export const Home = ({ navBarHeight = 0 }: { navBarHeight?: number }) => {
           <ContactList />
         </div>
       </div>
-      <div
-        ref={(ref) => {
-          if (ref) spacerRef.current.bottom = ref;
-        }}
-      ></div>
     </div>
   );
 };
