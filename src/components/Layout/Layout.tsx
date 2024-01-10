@@ -57,15 +57,8 @@ const handleResize = ({
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   const [navHeight, setNavHeight] = useState(0);
-  const spacerRef = useRef<HTMLDivElement>(null);
   const [routes, setRoutes] = useState<Route[]>(routesDefault);
   const sectionRef = useRef<HTMLDivElement[]>([]);
-
-  useEffect(() => {
-    if (spacerRef.current) {
-      spacerRef.current.style.height = `${navHeight}px`;
-    }
-  }, [navHeight]);
 
   // Add reference to each child, to set the appropriate height dynamically for Navbar color change
   const refChildren = Children.map(
@@ -124,7 +117,6 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       </Head>
 
       <Navbar routes={routes} setNavHeight={setNavHeight} />
-      <div ref={spacerRef} className=""></div>
       {refChildren}
       <Footer routes={routes} />
     </>

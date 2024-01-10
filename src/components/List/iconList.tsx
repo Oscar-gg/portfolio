@@ -36,7 +36,7 @@ const IconItem = ({
       alt={element.title}
     />
     <div className="m-5 flex w-full flex-col items-center justify-between align-middle text-white">
-      <h3 className="text-3xl">{element.title}</h3>
+      <h3 className="text-2xl md:text-3xl">{element.title}</h3>
       {element.description && <p>{element.description}</p>}
     </div>
   </div>
