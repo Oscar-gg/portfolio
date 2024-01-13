@@ -66,4 +66,5 @@ export const generalSchema = z.object({
   github_repo: z.string(),
   github_owner: z.string(),
   github_email: z.string(),
+  github_noreply_email: z.string(),
 });

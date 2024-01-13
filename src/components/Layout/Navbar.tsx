@@ -106,7 +106,7 @@ export const Navbar = ({
   return (
     <nav
       ref={barRef}
-      className="fixed start-0 top-0 z-20 w-full bg-primary dark:border-gray-600 dark:bg-gray-900"
+      className="fixed start-0 top-0 z-20 w-full bg-primary dark:border-gray-600 dark:bg-gray-900 border-b-[1px] border-gray-500"
     >
       <div className="flex max-w-screen-xl flex-wrap items-center justify-between p-4">
         <a

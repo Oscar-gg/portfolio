@@ -32,3 +32,4 @@ export const contact = generalInfo.contact;
 export const githubRepo = generalInfo.github_repo;
 export const githubOwner = generalInfo.github_owner;
 export const githubEmail = generalInfo.github_email;
+export const githubNoReplyEmail = generalInfo.github_noreply_email; // Email used by github when the user iteracts through the web interface (see using git log)

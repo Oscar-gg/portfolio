@@ -17,7 +17,7 @@ const graphqlWithAuth = graphql.defaults({
   },
 });
 
-import { githubRepo, githubOwner, githubEmail } from "~/data/typed/objects";
+import { githubRepo, githubOwner, githubEmail, githubNoReplyEmail } from "~/data/typed/objects";
 
 interface QuerySchema {
   repository: {
@@ -97,12 +97,12 @@ export const githubRouter = createTRPCRouter({
 
       const response = await graphqlWithAuth<QuerySchema>(
         `
-          query GetUserCommitHistory($owner: String!, $repo: String!, $email: String!) {
+          query GetUserCommitHistory($owner: String!, $repo: String!, $email: [String!]) {
             repository(owner: $owner, name: $repo) {
               defaultBranchRef {
                 target {
                   ... on Commit {
-                    history(author: {emails: [$email]}) {
+                    history(author: {emails: $email}) {
                       edges {
                         node {
                           additions
@@ -119,7 +119,7 @@ export const githubRouter = createTRPCRouter({
         {
           owner: owner,
           repo: repo,
-          email: githubEmail,
+          email: [githubEmail, githubNoReplyEmail],
         },
       );
 
