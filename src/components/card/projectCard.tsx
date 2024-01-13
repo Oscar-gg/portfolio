@@ -15,6 +15,7 @@ import { useState } from "react";
 
 import { MdExpandMore } from "react-icons/md";
 import { MdExpandLess } from "react-icons/md";
+import { api } from "~/utils/api";
 
 export interface ImageInfo {
   path: string;
@@ -35,6 +36,7 @@ export interface ProjectInfo {
   images: ImageInfo[];
   technologies: string[];
   className?: string;
+  github_repo?: string;
 }
 
 const dateOptions = {
@@ -57,9 +59,21 @@ export const ProjectCard = ({
     links,
     images,
     technologies,
+    github_repo,
   } = projectInfo;
 
   const [seeMore, setSeeMore] = useState(false);
+  const [openedCommitContributions, setOpenedCommitContributions] =
+    useState(false);
+
+  const {
+    data: commitContributions,
+    isLoading,
+    isError,
+  } = api.github.fetchCommitContributions.useQuery(
+    { repo_url: github_repo ?? "" },
+    { enabled: Boolean(github_repo) && openedCommitContributions },
+  );
 
   return (
     <Card className="relative h-fit overflow-hidden bg-black">
@@ -106,7 +120,10 @@ export const ProjectCard = ({
           {dateEnd.toLocaleDateString(undefined, dateOptions)}
         </p>
 
-        {(links.length > 0 || images.length > 1 || technologies.length > 0) && (
+        {(links.length > 0 ||
+          images.length > 1 ||
+          technologies.length > 0 ||
+          github_repo) && (
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem className="border-b-0" value="item-1">
               <AccordionTrigger>Details</AccordionTrigger>
@@ -126,6 +143,46 @@ export const ProjectCard = ({
                     </AccordionItem>
                   </Accordion>
                 )}
+                {github_repo && (
+                  <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem
+                      value="item-2"
+                      onClick={(e) => {
+                        console.log("Onclick accordion item!");
+                        setOpenedCommitContributions(true);
+                      }}
+                    >
+                      <AccordionTrigger>
+                        My contributions (github stats)
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        {isLoading && <p>Loading...</p>}
+                        {isError && <p>Error while fetching</p>}
+                        {commitContributions && (
+                          <div className="flex flex-col flex-wrap gap-3">
+                            <p>
+                              Commits: {commitContributions.userCommits} out of{" "}
+                              {commitContributions.commitCount}
+                            </p>
+                            <p>Additions: {commitContributions.additions}</p>
+                            <p>Deletions: {commitContributions.deletions}</p>
+                            <p>
+                              Last commit date:{" "}
+                              {commitContributions.lastCommitDate?.toDateString() ??
+                                "Error while fetching"}
+                            </p>
+                            <a href={github_repo} target="_blank">
+                              <div className="flex flex-row items-center justify-start gap-x-3">
+                                <FaExternalLinkAlt size={20} />{" "}
+                                <p className="items-center text-lg">Link</p>
+                              </div>
+                            </a>
+                          </div>
+                        )}
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                )}
                 {links.length > 0 && (
                   <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-2">
@@ -135,7 +192,7 @@ export const ProjectCard = ({
                       <AccordionContent>
                         <div className="flex flex-row flex-wrap gap-3">
                           {links?.map((link) => (
-                            <a key={link.path} href={link.path}>
+                            <a key={link.path} href={link.path} target="_blank">
                               <div className="flex flex-row items-center justify-start gap-x-3">
                                 <FaExternalLinkAlt size={25} />{" "}
                                 <p className="items-center text-lg">

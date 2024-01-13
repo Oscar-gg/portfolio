@@ -3,7 +3,12 @@ import Experience from "~/data/json/Experience.json";
 import Projects from "~/data/json/Projects.json";
 import General from "~/data/json/General.json";
 
-import { aboutSchema, experienceSchema, projectsSchema, generalSchema } from "./schemas";
+import {
+  aboutSchema,
+  experienceSchema,
+  projectsSchema,
+  generalSchema,
+} from "./schemas";
 
 const aboutInfo = aboutSchema.parse(About);
 
@@ -23,4 +28,7 @@ export const technologiesOptions = projectsInfo.technologiesOptions;
 const generalInfo = generalSchema.parse(General);
 
 export const contact = generalInfo.contact;
-export const lastUpdate = generalInfo.last_update;
+
+export const githubRepo = generalInfo.github_repo;
+export const githubOwner = generalInfo.github_owner;
+export const githubEmail = generalInfo.github_email;

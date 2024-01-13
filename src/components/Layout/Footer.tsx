@@ -1,4 +1,4 @@
-import { lastUpdate } from "~/data/typed/objects";
+import { api } from "~/utils/api";
 
 export interface Route {
   name: string;
@@ -7,6 +7,8 @@ export interface Route {
 }
 
 export const Footer = ({ routes }: { routes: Route[] }) => {
+  const { data: lastUpdate, isLoading } = api.github.fetchRepoDate.useQuery();
+
   const handleLinkClick = (id: string) => {
     const idNoHash = id.substring(1);
     const targetElement = document.getElementById(idNoHash);
@@ -48,7 +50,11 @@ export const Footer = ({ routes }: { routes: Route[] }) => {
           </span>
         </a>
 
-        <p>Last Update: {lastUpdate}</p>
+        {(lastUpdate ?? isLoading) && (
+          <p>
+            Last Update: {isLoading ? "Loading..." : lastUpdate?.toLocaleString(undefined, {year: 'numeric', month: 'long', day: 'numeric'})}
+          </p>
+        )}
       </div>
     </div>
   );

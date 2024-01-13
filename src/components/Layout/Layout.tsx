@@ -112,7 +112,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
     <>
       <Head>
         <title>Oscar Arreola</title>
-        <meta name="description" content="Oscar's portfolio" />
+        <meta name="description" content="Oscar Arreola - portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

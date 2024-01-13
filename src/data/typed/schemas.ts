@@ -40,6 +40,7 @@ export const projectsSchema = z.object({
   projects: z.array(
     z.object({
       title: z.string(),
+      github_repo: z.string().optional(),
       description: z.array(z.string()),
       dateStart: z.string().pipe(z.coerce.date()),
       dateEnd: z.string().pipe(z.coerce.date()),
@@ -62,5 +63,7 @@ export const generalSchema = z.object({
     linkedin: z.string(),
     email: z.string(),
   }),
-  last_update: z.string(),
+  github_repo: z.string(),
+  github_owner: z.string(),
+  github_email: z.string(),
 });

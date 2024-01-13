@@ -100,7 +100,7 @@ export const ExperienceCard = ({
                   </Dialog>
                 )}
                 {links?.map((link) => (
-                  <a key={link.path} href={link.path}>
+                  <a key={link.path} href={link.path} target="_blank">
                     <div className="flex flex-row items-center justify-start gap-x-3">
                       <FaExternalLinkAlt size={35} />{" "}
                       <p className="items-center text-lg">{link.description}</p>
