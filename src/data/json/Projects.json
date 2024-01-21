@@ -55,7 +55,7 @@
     },
     {
       "title": "Smart Resource Manager",
-      "github_repo": "https://github.com/Oscar6647/CemexHack2023",
+      "github_repo": "https://github.com/Oscar-gg/cemex_hacks_2023",
       "description": [
         "Tool to analyze energy expenses, optimize route planning, and classify waste.",
         "It features sensor monitoring across various offices to analyze energy consumption. Regarding mobility, the application employs optimization algorithms for route planning, integrated with the Google Maps API.",
@@ -83,7 +83,7 @@
           "description": "Project's landing page"
         },
         {
-          "path": "/Projects/SRM/Participastion Certificate.png",
+          "path": "/Projects/SRM/Participation Certificate.png",
           "description": "Participation certificate"
         },
         {
@@ -307,7 +307,7 @@
       ],
       "images": [
         {
-          "path": "/Projects/TaskRegister/Main Page.png",
+          "path": "/Projects/TaskRegister/Main page.png",
           "description": "App's initial page"
         },
         {
