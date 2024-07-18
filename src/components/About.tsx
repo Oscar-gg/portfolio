@@ -19,8 +19,8 @@ export const About = () => {
     <>
       <div className="mb-10 flex flex-row flex-wrap gap-x-3 gap-y-3">
         <p className="mx-3 mt-2 text-justify text-white lg:w-[40%]">
-          I am a passionate software developer that looks forward to tackle new
-          challenges and get involved in a variety of projects. I am eager to
+          I'm a passionate software developer that looks forward to tackle new
+          challenges and get involved in a variety of projects. I'm eager to
           keep learning about new technologies and inspired to work in
           fast-paced environments. I have experience in web and mobile
           development and have been able to develop my skills by being member of
