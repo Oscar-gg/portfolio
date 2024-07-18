@@ -4,10 +4,12 @@ export const ProjectList = ({
   projects,
   hasFilters,
   sortDate = true,
+  isProject = true,
 }: {
   projects: ProjectInfo[];
   hasFilters: boolean;
   sortDate?: boolean;
+  isProject?: boolean;
 }) => {
   if (sortDate) {
     projects.sort((a, b) => {
@@ -27,7 +29,7 @@ export const ProjectList = ({
       {projects.length !== visibleProjects.length && (
         <p className="mb-4 text-white">
           Showing {visibleProjects.length} of {projects.length}{" "}
-          {hasFilters && "filtered"} projects.
+          {hasFilters && "filtered "}{isProject ? "projects": "items"}.
         </p>
       )}
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">

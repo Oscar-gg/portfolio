@@ -1,4 +1,4 @@
-import { projects } from "~/data/typed/objects";
+import { projects, competitions } from "~/data/typed/objects";
 
 import { useState } from "react";
 import { ProjectList } from "./List/projectList";
@@ -6,8 +6,8 @@ import { ProjectFilter } from "./filter/projectFilter";
 
 import type { TechnologyItem } from "./filter/projectFilter";
 
-export const Projects = () => {
-  const [filteredProjects, setFilteredProjects] = useState(projects);
+export const Projects = ({additionalExperience} : {additionalExperience: boolean}) => {
+  const [filteredProjects, setFilteredProjects] = useState(additionalExperience ? projects : competitions);
   const [filterState, setFilterState] = useState({
     technologies: [] as TechnologyItem[],
     search: "",
@@ -29,7 +29,7 @@ export const Projects = () => {
         filterState={filterState}
         setFilterState={setFilterState}
       />
-      <ProjectList projects={filteredProjects} hasFilters={hasFilters} />
+      <ProjectList projects={filteredProjects} hasFilters={hasFilters} isProject={!additionalExperience} />
     </>
   );
 };

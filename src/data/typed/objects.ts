@@ -2,6 +2,7 @@ import About from "~/data/json/About.json";
 import Experience from "~/data/json/Experience.json";
 import Projects from "~/data/json/Projects.json";
 import General from "~/data/json/General.json";
+import Competitions from "~/data/json/Competitions.json";
 
 import {
   aboutSchema,
@@ -23,6 +24,11 @@ export const experience = experienceInfo.experience;
 const projectsInfo = projectsSchema.parse(Projects);
 
 export const projects = projectsInfo.projects;
+
+const competitionsInfo = projectsSchema.parse(Competitions);
+
+export const competitions = competitionsInfo.projects;
+
 export const technologiesOptions = projectsInfo.technologiesOptions;
 
 const generalInfo = generalSchema.parse(General);

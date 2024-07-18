@@ -16,6 +16,7 @@ const routesDefault: Route[] = [
   { name: "About", path: "#about" },
   { name: "Experience", path: "#experience" },
   { name: "Projects", path: "#projects" },
+  { name: "Additional Experience", path: "#additionalExperience" },
   { name: "Contact", path: "#contact" },
 ];
 

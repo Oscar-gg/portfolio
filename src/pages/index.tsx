@@ -19,9 +19,12 @@ export default function HomePage() {
         <Experience />
       </Section>
       <Section title="Projects" key="2" id="projects">
-        <Projects />
+        <Projects additionalExperience={false} />
       </Section>
-      <Section title="Contact" key="3" id="contact">
+      {/* <Section title="Additional Experience" key="3" id="additionalExperience">
+        <Projects additionalExperience={true}/>
+      </Section> */}
+      <Section title="Contact" key="4" id="contact">
         <Contact />
       </Section>
     </Layout>
