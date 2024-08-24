@@ -59,7 +59,7 @@ export const IconList = ({
   const detailItems = list.slice(maxItems);
 
   return (
-    <div>
+    <div className="">
       <div
         className={cn(
           "grid grid-cols-1 flex-row flex-wrap gap-3 rounded-md sm:grid-cols-2 lg:grid-cols-3",
@@ -72,7 +72,7 @@ export const IconList = ({
         ))}
       </div>
       {detailItems.length > 0 && (
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion  type="single" collapsible className="w-full mt-4">
           <AccordionItem className="border-b-0 text-white" value="list-details">
             <AccordionTrigger>
               {accordionMessage} ({detailItems.length})

@@ -48,7 +48,7 @@ export const About = () => {
       <div className="flex flex-col gap-y-5">
         <div>
           <h3 className="mb-3 text-2xl text-white">Programming Languages</h3>
-          <IconList list={programmingLanguages} maxItems={8} />
+          <IconList className="" list={programmingLanguages} maxItems={8} />
         </div>
         <div>
           <h3 className="mb-3 text-2xl text-white">Technologies</h3>

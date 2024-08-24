@@ -32,6 +32,7 @@ export interface ProjectInfo {
   description: string[];
   dateStart: Date;
   dateEnd: Date;
+  result?: string;
   links: LinkInfo[];
   images: ImageInfo[];
   technologies: string[];
@@ -85,6 +86,9 @@ export const ProjectCard = ({
       ></div>
       <CardContent className="mt-3 flex h-fit flex-col pb-0 text-white">
         <h4 className="mb-3 text-center text-4xl">{title}</h4>
+        {projectInfo.result && (
+          <h5 className="text-highlight text-center">{projectInfo.result}</h5>
+        )}
         <div className="mt-3 flex flex-col items-center gap-3">
           <div>
             {seeMore ? (
@@ -148,7 +152,6 @@ export const ProjectCard = ({
                     <AccordionItem
                       value="item-2"
                       onClick={(e) => {
-                        console.log("Onclick accordion item!");
                         setOpenedCommitContributions(true);
                       }}
                     >

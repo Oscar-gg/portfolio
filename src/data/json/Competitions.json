@@ -1,351 +1,55 @@
 {
     "projects": [
       {
-        "title": "Competitionss",
-        "github_repo": "https://github.com/Oscar-gg/smart_office",
+        "title": "RoboCup @Home",
+        "github_repo": "https://github.com/RoBorregos/home-hri/",
         "description": [
-          "IOT project to efficiently manage access to offices and obtain relevant usage data.",
-          "The platform facilitates remote registration, allows users to customize office temperature preferences, and provides a system for tracking work hours. The project comprises a web app and the ESP32 microcontroller. The web app allows users to register, customize preferences, and access real-time office data. Administrators can manage devices, modify RFID tags, and oversee office data. The ESP32s control a variety of sensors in real-time and provide data to the web app, through an implementation using WebSockets."
+          "Autonomous service robot competition. PM of HRI area."
         ],
-        "dateStart": "2023/10/18",
-        "dateEnd": "2023/12/1",
+        "result": "2nd place national",
+        "dateStart": "2024/4/1",
+        "dateEnd": "2024/4/1",
         "links": [
           {
-            "path": "https://smart-office-git-master-oscar-gg.vercel.app/",
-            "description": "Deploy"
-          },
-          {
-            "path": "https://github.com/Oscar-gg/Smart-Office",
+            "path": "https://github.com/RoBorregos/home",
             "description": "Github Repository"
           },
           {
-            "path": "https://youtu.be/wol7gAF8qnY",
-            "description": "Demo Video (Spanish)"
-          },
-          {
-            "path": "https://drive.google.com/file/d/1GZ1KSHAlW-SPrht134YFVS8qdK8ElEHf/view",
-            "description": "Presentation (Spanish)"
+            "path": "https://github.com/RoBorregos/home-hri/",
+            "description": "Github Repository HRI"
           }
         ],
         "images": [
           {
-            "path": "/Projects/SmartOffice/LandingPage.png",
+            "path": "/Competitions/RoboCupHome.jpeg",
             "description": "Project's landing page"
-          },
-          {
-            "path": "/Projects/SmartOffice/Architecture.png",
-            "description": "Architecture used"
-          },
-          {
-            "path": "/Projects/SmartOffice/Prototype.png",
-            "description": "Physical prototype to test the project"
           }
         ],
         "technologies": [
-          "Typescript",
-          "Next",
-          "NextAuth",
-          "AWS API Gateway",
-          "Websockets",
-          "Arduino",
-          "tRPC",
-          "Tailwind",
-          "Prisma"
-        ]
-      },
-      {
-        "title": "Smart Resource Manager",
-        "github_repo": "https://github.com/Oscar-gg/cemex_hacks_2023",
-        "description": [
-          "Tool to analyze energy expenses, optimize route planning, and classify waste.",
-          "It features sensor monitoring across various offices to analyze energy consumption. Regarding mobility, the application employs optimization algorithms for route planning, integrated with the Google Maps API.",
-          "Project developed for the CEMEX Hack 2023."
-        ],
-        "dateStart": "2023/11/24",
-        "dateEnd": "2023/11/26",
-        "links": [
-          {
-            "path": "https://cemex-hacks-2023.vercel.app/",
-            "description": "Deploy"
-          },
-          {
-            "path": "https://github.com/Oscar-gg/cemex_hacks_2023",
-            "description": "Web Page source code"
-          },
-          {
-            "path": "https://github.com/Oscar6647/CemexHack2023",
-            "description": "Flask Api and NodeMCU source code."
-          }
-        ],
-        "images": [
-          {
-            "path": "/Projects/SRM/LandingPage.png",
-            "description": "Project's landing page"
-          },
-          {
-            "path": "/Projects/SRM/Participation Certificate.png",
-            "description": "Participation certificate"
-          },
-          {
-            "path": "/Projects/SRM/RoutePlanning.png",
-            "description": "Route planning."
-          }
-        ],
-        "technologies": [
-          "Typescript",
+          "ROS",
           "Python",
-          "Next",
-          "React",
-          "NextAuth",
-          "AWS API Gateway",
-          "Websockets",
-          "Arduino",
-          "tRPC",
-          "Tailwind",
-          "Prisma"
+          "Whisper",
+          "Docker"
         ]
-      },
-      {
-        "title": "Joyas Jeans Webpage",
-        "github_repo": "https://github.com/Oscar-gg/joyas-jeans-project",
+      }, {
+        "title": "Meta Hacker Cup 2023",
         "description": [
-          "Full-stack web application designed for a jeans store (Joyas Jeans).",
-          "The application enables users to view and filter products and facilitates contact with the store. On the administrative side, the application provides tools to enable the store to manage its products and monitor order history."
+          "Autonomous service robot competition. PM of HRI area."
         ],
-        "dateStart": "2023/11/22",
-        "dateEnd": "2023/11/30",
-        "links": [
-          {
-            "path": "https://joyas-jeans-project.vercel.app/",
-            "description": "Deploy"
-          },
-          {
-            "path": "https://github.com/Oscar-gg/joyas-jeans-project",
-            "description": "Project's source code"
-          }
-        ],
-        "images": [
-          {
-            "path": "/Projects/JoyasJeans/LandingPage.png",
-            "description": "Project's landing page"
-          },
-          {
-            "path": "/Projects/JoyasJeans/AdminPanel.png",
-            "description": "Dashboard for the store's administrator"
-          }
-        ],
-        "technologies": [
-          "Typescript",
-          "Next",
-          "NextAuth",
-          "Prisma",
-          "Tailwind",
-          "tRPC"
-        ]
-      },
-      {
-        "title": "BanCoach",
-        "github_repo": "https://github.com/CarlosMtz1281/HACKmty-2023",
-        "description": [
-          "A platform that works as a finance coach and gives recommendations to users based on their context, needs, and objectives.",
-          "The recommendations are based on the investment funds available by Banorte and enhanced using OpenAi's completions API. In addition, the application also includes a chatbot that can be used to answer specific questions related to finance and/or the suggested investment funds."
-        ],
-        "dateStart": "2023/9/23",
-        "dateEnd": "2023/9/24",
-        "links": [
-          {
-            "path": "https://github.com/CarlosMtz1281/HACKmty-2023",
-            "description": "Project's source code"
-          }
-        ],
-        "images": [
-          {
-            "path": "/Projects/BanCoach/LandingPage.png",
-            "description": "Project's landing page"
-          },
-          {
-            "path": "/Projects/BanCoach/Choices.png",
-            "description": "Investment recommendations using AI"
-          },
-          {
-            "path": "/Projects/BanCoach/Chatbot.jpg",
-            "description": "Chatbot implementation to answer general questions"
-          },
-          {
-            "path": "/Projects/BanCoach/Questionnaire.jpg",
-            "description": "Retrieving user information to provide better recommendations"
-          }
-        ],
-        "technologies": [
-          "Node.js",
-          "React",
-          "Javascript",
-          "OpenAI API",
-          "Vite",
-          "MUI"
-        ]
-      },
-      {
-        "title": "Roborregos Warehouse",
-        "github_repo": "https://github.com/RoBorregos/Robo-Almacen",
-        "description": [
-          "IoT warehouse aimed to manage, control, and monitor materials in the lab of RoBorregos.",
-          " Consists of a web application, and a hardware system. The application is aimed to help RoBorregos manage their materials."
-        ],
-        "dateStart": "2023/6/1",
+        "result": "11th place from México (Round 1)",
+        "dateStart": "2023/10/1",
         "dateEnd": "2023/10/1",
         "links": [
-          {
-            "path": "https://github.com/RoBorregos/Robo-Almacen",
-            "description": "Project's source code"
-          }
         ],
         "images": [
           {
-            "path": "/Projects/Warehouse/LandingPage.png",
-            "description": "Project's landing page"
+            "path": "/Competitions/MetaHackerCup.png",
+            "description": "Competition landing page"
           }
         ],
         "technologies": [
-          "Typescript",
-          "Next",
-          "React",
-          "NextAuth",
-          "Azure AD",
-          "Arduino",
-          "tRPC",
-          "Tailwind",
-          "Prisma"
+          "C++"
         ]
-      },
-      {
-        "title": "Calendar Tool",
-        "github_repo": "https://github.com/IvanRomero03/rbrgs-convertidor-horario",
-        "description": [
-          "Browser extension to generate a calendar file (.ics) from Mitec, allowing students to add their schedules to their preferred calendar app."
-        ],
-        "dateStart": "2023/8/1",
-        "dateEnd": "2023/8/9",
-        "links": [
-          {
-            "path": "https://github.com/IvanRomero03/rbrgs-convertidor-horario",
-            "description": "Project's source code"
-          },
-          {
-            "path": "https://chrome.google.com/webstore/detail/rbrgs-convertidor-horario/dbjandhjhichlhlfiocagibehahjlmcn?hl=es&authuser=0",
-            "description": "Chrome Extension"
-          }
-        ],
-        "images": [
-          {
-            "path": "/Projects/Extension.png",
-            "description": "Extension's pop up"
-          }
-        ],
-        "technologies": ["React", "Plasmo", "Tailwind"]
-      },
-      {
-        "title": "Event Manager",
-        "github_repo": "https://github.com/RoBorregos/RoboEvents",
-        "description": [
-          "Web page designed to assist RoBorregos in efficiently managing and communicating their events with the community.",
-          "Users can register and modify events with various details, add events to their calendars, and filter events based on criteria. The system incorporates role-based authentication with four distinct roles, each with specific permissions.",
-          "Technologies like Vercel for deployment, Supabase for image storage, CockroachDB for database storage, and OAuth providers such as Google and GitHub are utilized."
-        ],
-        "dateStart": "2023/7/1",
-        "dateEnd": "2023/8/9",
-        "links": [
-          {
-            "path": "https://events.rbrgs.com/",
-            "description": "Deploy"
-          },
-          {
-            "path": "https://github.com/RoBorregos/RoboEvents",
-            "description": "Project's source code"
-          }
-        ],
-        "images": [
-          {
-            "path": "/Projects/EventManager/Landing Page.png",
-            "description": "Landing Page"
-          },
-          {
-            "path": "/Projects/EventManager/Filter.png",
-            "description": "Event Filtering"
-          },
-          {
-            "path": "/Projects/EventManager/Create New.png",
-            "description": "Register a new event"
-          }
-        ],
-        "technologies": [
-          "Typescript",
-          "Next",
-          "React",
-          "NextAuth",
-          "tRPC",
-          "Tailwind",
-          "Prisma",
-          "Formik",
-          "Supabase"
-        ]
-      },
-      {
-        "title": "Task Register",
-        "github_repo": "https://github.com/Oscar-gg/TaskRegister",
-        "description": [
-          "A mobile app designed to simplify the recording and management of tasks.",
-          "Developed for Android devices using Java in Android Studio. Some of the app features are: sorting tasks, personalizing task display (card colors, concise view, etc.), filtering tasks, consulting completed tasks, deleting tasks, and showing general statistics."
-        ],
-        "dateStart": "2021/9/1",
-        "dateEnd": "2022/5/1",
-        "links": [
-          {
-            "path": "https://github.com/Oscar-gg/TaskRegister",
-            "description": "Project's source code"
-          }
-        ],
-        "images": [
-          {
-            "path": "/Projects/TaskRegister/Main page.png",
-            "description": "App's initial page"
-          },
-          {
-            "path": "/Projects/TaskRegister/Task form.png",
-            "description": "Form to fill data for a new task"
-          },
-          {
-            "path": "/Projects/TaskRegister/Configuration.png",
-            "description": "App's configuration page"
-          }
-        ],
-        "technologies": ["Java", "Android Studio"]
-      },
-      {
-        "title": "Automation Scripts",
-        "github_repo": "https://github.com/Oscar-gg/save_links",
-        "description": [
-          "Scripts used to automate repetitive tasks during the pandemic (e.g, opening Zoom classes and their related links, or saving groups of browser tabs efficiently)."
-        ],
-        "dateStart": "2021/8/1",
-        "dateEnd": "2022/7/1",
-        "links": [
-          {
-            "path": "https://github.com/Oscar-gg/save_links",
-            "description": "Script to manage browser tabs"
-          },
-          {
-            "path": "https://github.com/Oscar-gg/zoom-script",
-            "description": "Script to enter zoom meetings"
-          }
-        ],
-        "images": [
-          {
-            "path": "/Projects/SaveLinks.png",
-            "description": "CLI to manage browser tabs"
-          }
-        ],
-        "technologies": ["Python", "Pyautogui", "AutoHotKey"]
       }
     ],
     "technologiesOptions": [
