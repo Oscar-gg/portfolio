@@ -1,8 +1,47 @@
 {
   "experience": [
     {
+      "title": "Uber",
+      "date": "Jun 2024 - September 2024",
+      "position": "UberSTAR Software Developer Intern",
+      "images": [
+        {
+          "path": "/Experience/Uber.jpeg",
+          "description": "Uber Logo"
+        }
+      ],
+      "links": [
+        {
+          "path": "https://www.linkedin.com/company/uber-com/mycompany/verification/",
+          "description": "Uber Linked in"
+        }
+      ],
+      "description": [
+        "Software engineering intern at the Biztech team (Platform Engineering).",
+        "Implementing the backend of an internal evaluation framework using Python, Michelangelo, Langchain, gRPC, and internal tooling."
+      ]
+    },
+    {
+      "title": "On Campus Intern",
+      "date": "Feb 2024 - Jun 2024",
+      "position": "Software Developer Intern",
+      "images": [
+        {
+          "path": "/Experience/Tec.jpg",
+          "description": "Tec Logo"
+        }
+      ],
+      "links": [
+      ],
+      "description": [
+        "Crowd counting project aimed to optimize public space by analyzing usage of ITESM's Central Park.",
+        "Implemented Person REID using anchor-guided clustering, enhancing crowd behaviour analysis.",
+        "Built a video upload dashboard using Next and deployed with AWS Amplify."
+      ]
+    },
+    {
       "title": "Dataexpress",
-      "date": "Dec 2023 - Present",
+      "date": "Dec 2023 - Feb 2024",
       "position": "Software Developer",
       "images": [
         {
@@ -22,7 +61,7 @@
       ],
       "description": [
         "Dataexpress is a No-Code Data Pipeline ELT Platform that allows you to connect your data sources and destinations in minutes.",
-        "Working on the front & backend, using Next.js, Node.js and Python.",
+        "Worked on the front & backend, using Next.js, Node.js and Python.",
         "Implemented a destination connector for Google Cloud Storage while adding validation, IAM permission testing, and feature documentation. Built a source connector for Facebook Ads using the Facebook Marketing API."
       ]
     },

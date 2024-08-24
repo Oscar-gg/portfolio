@@ -71,12 +71,14 @@ export const ExperienceCard = ({
           src={images[0] ? images[0].path : " "}
           alt={images[0]?.description}
         />
-        <div className="mb-auto mt-auto">
+        <div className="mb-auto mt-auto md:ml-10">
+          <ul className="list-disc marker:text-white">
           {description.map((paragraph, index) => (
-            <p className="mb-4" key={index}>
+            <li className="mb-4" key={index}>
               {paragraph}
-            </p>
+            </li>
           ))}
+          </ul>
         </div>
       </div>
       {(links.length > 0 || images.length > 1) && (
