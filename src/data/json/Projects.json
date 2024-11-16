@@ -242,7 +242,11 @@
           "description": "Extension's pop up"
         }
       ],
-      "technologies": ["React", "Plasmo", "Tailwind"]
+      "technologies": [
+        "React",
+        "Plasmo",
+        "Tailwind"
+      ]
     },
     {
       "title": "Event Manager",
@@ -319,7 +323,10 @@
           "description": "App's configuration page"
         }
       ],
-      "technologies": ["Java", "Android Studio"]
+      "technologies": [
+        "Java",
+        "Android Studio"
+      ]
     },
     {
       "title": "Automation Scripts",
@@ -345,7 +352,11 @@
           "description": "CLI to manage browser tabs"
         }
       ],
-      "technologies": ["Python", "Pyautogui", "AutoHotKey"]
+      "technologies": [
+        "Python",
+        "Pyautogui",
+        "AutoHotKey"
+      ]
     }
   ],
   "technologiesOptions": [

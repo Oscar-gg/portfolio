@@ -5,11 +5,16 @@ import { ProjectList } from "./List/projectList";
 import { ProjectFilter } from "./filter/projectFilter";
 
 import type { TechnologyItem } from "./filter/projectFilter";
-import { ProjectInfo } from "./card/projectCard";
+import type { ProjectInfo } from "./card/projectCard";
 
-export const Projects = ({additionalExperience} : {additionalExperience: boolean}) => {
-  const items = additionalExperience ? competitions : projects; 
-  const [filteredProjects, setFilteredProjects] = useState<ProjectInfo[]>(items);
+export const Projects = ({
+  additionalExperience,
+}: {
+  additionalExperience: boolean;
+}) => {
+  const items = additionalExperience ? competitions : projects;
+  const [filteredProjects, setFilteredProjects] =
+    useState<ProjectInfo[]>(items);
   const [filterState, setFilterState] = useState({
     technologies: [] as TechnologyItem[],
     search: "",
@@ -31,7 +36,11 @@ export const Projects = ({additionalExperience} : {additionalExperience: boolean
         filterState={filterState}
         setFilterState={setFilterState}
       />
-      <ProjectList projects={filteredProjects} hasFilters={hasFilters} isProject={!additionalExperience} />
+      <ProjectList
+        projects={filteredProjects}
+        hasFilters={hasFilters}
+        isProject={!additionalExperience}
+      />
     </>
   );
 };
