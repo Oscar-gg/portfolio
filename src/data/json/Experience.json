@@ -96,7 +96,10 @@
       "date": "Oct 2022 - Present",
       "position": "Software Developer",
       "images": [
-        { "path": "/Roborregos.png", "description": "Roborregos's logo." },
+        {
+          "path": "/Roborregos.png",
+          "description": "Roborregos's logo."
+        },
         {
           "path": "/Experience/MazeRobot.png",
           "description": "RescueMaze robot (2023)"
@@ -136,7 +139,10 @@
       "date": "Summer 2023",
       "position": "Software Developer",
       "images": [
-        { "path": "/Experience/CVA.png", "description": "CVA Logo" },
+        {
+          "path": "/Experience/CVA.png",
+          "description": "CVA Logo"
+        },
         {
           "path": "/Experience/CVA_Course.png",
           "description": "Produced Course"
@@ -172,7 +178,10 @@
       "date": "Feb 2023 - Present",
       "position": "Tutor & Software Developer",
       "images": [
-        { "path": "/Experience/MAE.png", "description": "MAE's logo" },
+        {
+          "path": "/Experience/MAE.png",
+          "description": "MAE's logo"
+        },
         {
           "path": "/Experience/MAE2.png",
           "description": "Related instagram post from MAEs"
