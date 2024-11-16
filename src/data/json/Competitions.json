@@ -1,82 +1,99 @@
 {
-    "projects": [
-      {
-        "title": "RoboCup @Home",
-        "github_repo": "https://github.com/RoBorregos/home-hri/",
-        "description": [
-          "Autonomous service robot competition. PM of HRI area."
-        ],
-        "result": "2nd place national",
-        "dateStart": "2024/4/1",
-        "dateEnd": "2024/4/1",
-        "links": [
-          {
-            "path": "https://github.com/RoBorregos/home",
-            "description": "Github Repository"
-          },
-          {
-            "path": "https://github.com/RoBorregos/home-hri/",
-            "description": "Github Repository HRI"
-          }
-        ],
-        "images": [
-          {
-            "path": "/Competitions/RoboCupHome.jpeg",
-            "description": "Project's landing page"
-          }
-        ],
-        "technologies": [
-          "ROS",
-          "Python",
-          "Whisper",
-          "Docker"
-        ]
-      }, {
-        "title": "Meta Hacker Cup 2023",
-        "description": [
-          "Autonomous service robot competition. PM of HRI area."
-        ],
-        "result": "11th place from México (Round 1)",
-        "dateStart": "2023/10/1",
-        "dateEnd": "2023/10/1",
-        "links": [
-        ],
-        "images": [
-          {
-            "path": "/Competitions/MetaHackerCup.png",
-            "description": "Competition landing page"
-          }
-        ],
-        "technologies": [
-          "C++"
-        ]
-      }
-    ],
-    "technologiesOptions": [
-      "AWS API Gateway",
-      "Android Studio",
-      "Arduino",
-      "AutoHotKey",
-      "Azure AD",
-      "Formik",
-      "Java",
-      "Javascript",
-      "MUI",
-      "Next",
-      "NextAuth",
-      "Node.js",
-      "OpenAI API",
-      "Plasmo",
-      "Prisma",
-      "Pyautogui",
-      "Python",
-      "React",
-      "Supabase",
-      "Tailwind",
-      "Typescript",
-      "Vite",
-      "Websockets",
-      "tRPC"
-    ]
-  }
-  
+  "projects": [
+    {
+      "title": "Mexico ICPC Finals",
+      "description": ["Competed in the Mexico ICPC Finals."],
+      "result": "Top 25 from México",
+      "dateStart": "2024/11/9",
+      "dateEnd": "2024/11/9",
+      "links": [],
+      "images": [
+        {
+          "path": "/Competitions/IcpcMexicoFinals.png",
+          "description": "Picture with School Director (left), CEO of ICPC (middle) and with the team."
+        },
+        {
+          "path": "/Competitions/Icpc_team2.jpeg",
+          "description": "Picture with team before the competition."
+        },
+        {
+          "path": "/Competitions/Icpc_team.jpeg",
+          "description": "Picture with team after the competition."
+        },
+        {
+          "path": "/Competitions/Icpc.jpeg",
+          "description": "Picture with team."
+        }
+      ],
+      "technologies": ["C++"]
+    },
+    {
+      "title": "RoboCup@Home",
+      "github_repo": "https://github.com/RoBorregos/home-hri/",
+      "description": [
+        "Autonomous service robot competition. PM of Human Robot Interaction module."
+      ],
+      "result": "2nd place national",
+      "dateStart": "2024/4/1",
+      "dateEnd": "2024/4/1",
+      "links": [
+        {
+          "path": "https://github.com/RoBorregos/home",
+          "description": "Github Repository"
+        },
+        {
+          "path": "https://github.com/RoBorregos/home-hri/",
+          "description": "Github Repository HRI"
+        }
+      ],
+      "images": [
+        {
+          "path": "/Competitions/RoboCupHome.jpeg",
+          "description": "Team at Mexican Tournament of robotics."
+        }
+      ],
+      "technologies": ["ROS", "Python", "Whisper", "Docker"]
+    },
+    {
+      "title": "Meta Hacker Cup 2023",
+      "description": ["Autonomous service robot competition. PM of HRI area."],
+      "result": "11th place from México (Round 1)",
+      "dateStart": "2023/10/1",
+      "dateEnd": "2023/10/1",
+      "links": [],
+      "images": [
+        {
+          "path": "/Competitions/MetaHackerCup.png",
+          "description": "Competition landing page"
+        }
+      ],
+      "technologies": ["C++"]
+    }
+  ],
+  "technologiesOptions": [
+    "AWS API Gateway",
+    "Android Studio",
+    "Arduino",
+    "AutoHotKey",
+    "Azure AD",
+    "Formik",
+    "Java",
+    "Javascript",
+    "MUI",
+    "Next",
+    "NextAuth",
+    "Node.js",
+    "OpenAI API",
+    "Plasmo",
+    "Prisma",
+    "Pyautogui",
+    "Python",
+    "React",
+    "Supabase",
+    "Tailwind",
+    "Typescript",
+    "Vite",
+    "Websockets",
+    "tRPC"
+  ]
+}
