@@ -48,9 +48,10 @@ const dateOptions = {
 
 export const ProjectCard = ({
   projectInfo,
+  isProject,
 }: {
   projectInfo: ProjectInfo;
-  className?: string;
+  isProject: boolean;
 }) => {
   const {
     title,
@@ -87,7 +88,7 @@ export const ProjectCard = ({
       <CardContent className="mt-3 flex h-fit flex-col pb-0 text-white">
         <h4 className="mb-3 text-center text-4xl">{title}</h4>
         {projectInfo.result && (
-          <h5 className="text-highlight text-center">{projectInfo.result}</h5>
+          <h5 className="text-center text-highlight">{projectInfo.result}</h5>
         )}
         <div className="mt-3 flex flex-col items-center gap-3">
           <div>
@@ -214,7 +215,9 @@ export const ProjectCard = ({
                     <DialogTrigger>
                       <div className="mt-5 flex flex-row items-center justify-start gap-x-3">
                         <FaImage size={30} />{" "}
-                        <p className="items-center text-lg">Project Images</p>
+                        <p className="items-center text-lg">
+                          {isProject ? "Project Images" : "Competition Images"}
+                        </p>
                       </div>
                     </DialogTrigger>
                     <DialogContent>

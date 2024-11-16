@@ -29,13 +29,18 @@ export const ProjectList = ({
       {projects.length !== visibleProjects.length && (
         <p className="mb-4 text-white">
           Showing {visibleProjects.length} of {projects.length}{" "}
-          {hasFilters && "filtered "}{isProject ? "projects": "items"}.
+          {hasFilters && "filtered "}
+          {isProject ? "projects" : "items"}.
         </p>
       )}
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         {visibleProjects.length > 0 ? (
           visibleProjects.map((project) => (
-            <ProjectCard key={project.title} projectInfo={project} />
+            <ProjectCard
+              key={project.title}
+              projectInfo={project}
+              isProject={isProject}
+            />
           ))
         ) : (
           <p className="text-white">
