@@ -8,17 +8,44 @@
         {
           "path": "/Experience/Uber.jpeg",
           "description": "Uber Logo"
+        },
+        {
+          "path": "/Experience/uber/entrance.jpg",
+          "description": "Entrance of San Francisco's Uber office"
+        },
+        {
+          "path": "/Experience/uber/Mingjie.png",
+          "description": "Picture with my Mentor, Mingjie Wang."
+        },
+        {
+          "path": "/Experience/uber/Sam.png",
+          "description": "Picture with mentor Sam Hoang."
+        },
+        {
+          "path": "/Experience/uber/Weiqiang.png",
+          "description": "Picture with mentor, Weiqiang Wang."
+        },
+        {
+          "path": "/Experience/uber/Team.jpg",
+          "description": "Picture with my team."
         }
       ],
       "links": [
         {
-          "path": "https://www.linkedin.com/company/uber-com/mycompany/verification/",
-          "description": "Uber Linked in"
+          "path": "https://www.linkedin.com/posts/oscar-arreola04_i-am-very-excited-to-share-that-i-will-be-activity-7196636266900193281-fGOL?utm_source=share&utm_medium=member_desktop",
+          "description": "Linked in post"
+        },
+        {
+          "path": "https://www.linkedin.com/posts/homayoun-lotfi-8424a841_uberon-activity-7240515926880575488-bbFs?utm_source=share&utm_medium=member_desktop",
+          "description": "Linked in post (mentor)"
         }
       ],
       "description": [
         "Software engineering intern at the Biztech team (Platform Engineering).",
-        "Implementing the backend of an internal evaluation framework using Python, Michelangelo, Langchain, gRPC, and internal tooling."
+        "Developed a GenAI Application Evaluation framework for internal tools using Michelangelo, Langchain, gRPC, Java, and internal tooling.",
+        "Implemented robust methodology by analyzing over 7 papers on the field. Bench-marked individual module performance using field-related datasets.",
+        "Refactored framework module, optimizing interaction speed with Hive by 70%.",
+        "Implemented CLI apps for module testing, benchmarking, dataset generation, and visualization results."
       ]
     },
     {
@@ -31,12 +58,11 @@
           "description": "Tec Logo"
         }
       ],
-      "links": [
-      ],
+      "links": [],
       "description": [
         "Crowd counting project aimed to optimize public space by analyzing usage of ITESM's Central Park.",
-        "Implemented Person REID using anchor-guided clustering, enhancing crowd behaviour analysis.",
-        "Built a video upload dashboard using Next and deployed with AWS Amplify."
+        "Implemented person REID using anchor-guided clustering, with PyTorch, YOLO, and Dockerized environments.",
+        "Developed a video upload dashboard using Next.js, integrated with S3, and deployed via AWS Amplify."
       ]
     },
     {
