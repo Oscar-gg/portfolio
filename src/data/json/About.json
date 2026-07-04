@@ -19,22 +19,22 @@
     },
     {
       "title": "C++",
-      "description": "2 years",
+      "description": "3 years",
       "image": "/About/C++.png"
     },
     {
       "title": "Python",
-      "description": "2 years",
+      "description": "3 years",
       "image": "/About/Python.png"
     },
     {
       "title": "Javascript",
-      "description": "1 year",
+      "description": "2 years",
       "image": "/About/Javascript.png"
     },
     {
       "title": "Typescript",
-      "description": "1 year",
+      "description": "2 years",
       "image": "/About/Typescript.png"
     },
     {
@@ -134,6 +134,14 @@
     {
       "title": "VirtualBox",
       "image": "/About/VirtualBox.png"
+    },
+    {
+      "title": "Docker",
+      "image": "/About/Docker.png"
+    },
+    {
+      "title": "C#",
+      "image": "/About/CSharp.png"
     }
   ]
 }

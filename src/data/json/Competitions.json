@@ -15,7 +15,12 @@
           "description": "GitHub Repository"
         }
       ],
-      "images": [],
+      "images": [
+        {
+          "path": "/Competitions/RobocupHome2026.jpeg",
+          "description": "RoboCup@Home National 2026"
+        }
+      ],
       "technologies": [
         "ROS",
         "Python",
@@ -38,7 +43,12 @@
           "description": "GitHub Repository"
         }
       ],
-      "images": [],
+      "images": [
+        {
+          "path": "/Competitions/RobocupHomeBrasil.jpeg",
+          "description": "RoboCup@Home International competition in Salvador-Bahia, Brazil"
+        }
+      ],
       "technologies": [
         "ROS",
         "Python",
@@ -49,7 +59,7 @@
       "title": "RoboCup@Home National (2025)",
       "github_repo": "https://github.com/RoBorregos/home2",
       "description": [
-        "National autonomous service robot competition. Lead the team of 25 members, qualifying for the international round."
+        "National autonomous service robot competition. Led the team of 25 members, qualifying for the international round."
       ],
       "result": "2nd place national",
       "dateStart": "2025/5/1",
@@ -60,7 +70,12 @@
           "description": "GitHub Repository"
         }
       ],
-      "images": [],
+      "images": [
+        {
+          "path": "/Competitions/RobocupHome2025.JPG",
+          "description": "RoboCup@Home National 2025"
+        }
+      ],
       "technologies": [
         "ROS",
         "Python",
@@ -158,8 +173,16 @@
       "dateStart": "2022/1/1",
       "dateEnd": "2022/1/1",
       "links": [],
-      "images": [],
-      "technologies": []
+      "images": [
+        {
+          "path": "/Competitions/ScienceCompetition.jpeg",
+          "description": "Picture of the day at the competition"
+        }
+      ],
+      "technologies": [
+        "C++",
+        "Python"
+      ]
     }
   ],
   "technologiesOptions": [

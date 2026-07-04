@@ -16,43 +16,17 @@
           "description": "GitHub Repository"
         }
       ],
-      "images": [],
+      "images": [
+        {
+          "path": "/Projects/oassistant/oassistant.jpeg",
+          "description": "oassistant interface"
+        }
+      ],
       "technologies": [
         "Kotlin",
         "Typescript",
         "Python",
         "Docker"
-      ]
-    },
-    {
-      "title": "devtec",
-      "github_repo": "https://github.com/Oscar-gg/devtec",
-      "description": [
-        "Community platform for ITESM students to discover and showcase projects, developers, and organizations.",
-        "Features project CRUD with multi-author support, GitHub repository integration, language-based filtering, tag system, and organization pages.",
-        "Authentication is restricted to institutional email addresses via GitHub OAuth."
-      ],
-      "dateStart": "2025/6/1",
-      "dateEnd": "2025/12/1",
-      "links": [
-        {
-          "path": "https://devtec.vercel.app/",
-          "description": "Live Deploy"
-        },
-        {
-          "path": "https://github.com/Oscar-gg/devtec",
-          "description": "GitHub Repository"
-        }
-      ],
-      "images": [],
-      "technologies": [
-        "Typescript",
-        "Next",
-        "React",
-        "NextAuth",
-        "tRPC",
-        "Prisma",
-        "Tailwind"
       ]
     },
     {
@@ -71,7 +45,16 @@
           "description": "GitHub Repository"
         }
       ],
-      "images": [],
+      "images": [
+        {
+          "path": "/Projects/Tenor/login.png",
+          "description": "Tenor login page"
+        },
+        {
+          "path": "/Projects/Tenor/docs.png",
+          "description": "Tenor documentation view"
+        }
+      ],
       "technologies": [
         "Typescript",
         "Next",
