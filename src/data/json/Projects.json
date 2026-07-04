@@ -1,6 +1,86 @@
 {
   "projects": [
     {
+      "title": "oassistant",
+      "github_repo": "https://github.com/Oscar-gg/oassistant",
+      "description": [
+        "Personal AI assistant with a native Android app, backend server, and Claude/MCP integration.",
+        "Multi-platform architecture: Kotlin Android client, TypeScript/Python backend, and GPU-accelerated Docker deployment.",
+        "Integrates with Claude via the Model Context Protocol (MCP) for conversational AI capabilities across connected services."
+      ],
+      "dateStart": "2026/4/2",
+      "dateEnd": "2026/5/1",
+      "links": [
+        {
+          "path": "https://github.com/Oscar-gg/oassistant",
+          "description": "GitHub Repository"
+        }
+      ],
+      "images": [],
+      "technologies": [
+        "Kotlin",
+        "Typescript",
+        "Python",
+        "Docker"
+      ]
+    },
+    {
+      "title": "devtec",
+      "github_repo": "https://github.com/Oscar-gg/devtec",
+      "description": [
+        "Community platform for ITESM students to discover and showcase projects, developers, and organizations.",
+        "Features project CRUD with multi-author support, GitHub repository integration, language-based filtering, tag system, and organization pages.",
+        "Authentication is restricted to institutional email addresses via GitHub OAuth."
+      ],
+      "dateStart": "2025/6/1",
+      "dateEnd": "2025/12/1",
+      "links": [
+        {
+          "path": "https://devtec.vercel.app/",
+          "description": "Live Deploy"
+        },
+        {
+          "path": "https://github.com/Oscar-gg/devtec",
+          "description": "GitHub Repository"
+        }
+      ],
+      "images": [],
+      "technologies": [
+        "Typescript",
+        "Next",
+        "React",
+        "NextAuth",
+        "tRPC",
+        "Prisma",
+        "Tailwind"
+      ]
+    },
+    {
+      "title": "Tenor",
+      "github_repo": "https://github.com/Apantli/Tenor",
+      "description": [
+        "AI-powered full-stack project management platform.",
+        "Built using Next.js, TypeScript, and Firebase. Implemented an AI auto-completion assistant and page-based context grounding to boost performance.",
+        "Integrated CI workflows with Cypress and ESLint. Automated documentation with Typedoc and Docusaurus."
+      ],
+      "dateStart": "2025/2/1",
+      "dateEnd": "2025/6/1",
+      "links": [
+        {
+          "path": "https://github.com/Apantli/Tenor",
+          "description": "GitHub Repository"
+        }
+      ],
+      "images": [],
+      "technologies": [
+        "Typescript",
+        "Next",
+        "React",
+        "Firebase",
+        "Cypress"
+      ]
+    },
+    {
       "title": "Smart Office",
       "github_repo": "https://github.com/Oscar-gg/smart_office",
       "description": [
@@ -365,9 +445,13 @@
     "Arduino",
     "AutoHotKey",
     "Azure AD",
+    "Cypress",
+    "Docker",
+    "Firebase",
     "Formik",
     "Java",
     "Javascript",
+    "Kotlin",
     "MUI",
     "Next",
     "NextAuth",

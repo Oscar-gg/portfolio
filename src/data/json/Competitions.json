@@ -1,6 +1,73 @@
 {
   "projects": [
     {
+      "title": "RoboCup@Home National (2026)",
+      "github_repo": "https://github.com/RoBorregos/home2",
+      "description": [
+        "National autonomous service robot competition. Qualified for the international round."
+      ],
+      "result": "1st place national",
+      "dateStart": "2026/5/1",
+      "dateEnd": "2026/5/1",
+      "links": [
+        {
+          "path": "https://github.com/RoBorregos/home2",
+          "description": "GitHub Repository"
+        }
+      ],
+      "images": [],
+      "technologies": [
+        "ROS",
+        "Python",
+        "Docker"
+      ]
+    },
+    {
+      "title": "RoboCup@Home International",
+      "github_repo": "https://github.com/RoBorregos/home2",
+      "description": [
+        "International autonomous service robot competition held annually as part of RoboCup (Salvador-Bahia, Brazil).",
+        "Led the Human-Robot Interaction sub-team for RoBorregos' entry."
+      ],
+      "result": "6th place internationally",
+      "dateStart": "2025/7/1",
+      "dateEnd": "2025/7/1",
+      "links": [
+        {
+          "path": "https://github.com/RoBorregos/home2",
+          "description": "GitHub Repository"
+        }
+      ],
+      "images": [],
+      "technologies": [
+        "ROS",
+        "Python",
+        "Docker"
+      ]
+    },
+    {
+      "title": "RoboCup@Home National (2025)",
+      "github_repo": "https://github.com/RoBorregos/home2",
+      "description": [
+        "National autonomous service robot competition. Lead the team of 25 members, qualifying for the international round."
+      ],
+      "result": "2nd place national",
+      "dateStart": "2025/5/1",
+      "dateEnd": "2025/5/1",
+      "links": [
+        {
+          "path": "https://github.com/RoBorregos/home2",
+          "description": "GitHub Repository"
+        }
+      ],
+      "images": [],
+      "technologies": [
+        "ROS",
+        "Python",
+        "Docker"
+      ]
+    },
+    {
       "title": "Mexico ICPC Finals",
       "description": [
         "Competed in the Mexico ICPC Finals, the premier competitive programming contest for university students in the country."
@@ -32,7 +99,7 @@
       ]
     },
     {
-      "title": "RoboCup@Home",
+      "title": "RoboCup@Home National 2024",
       "github_repo": "https://github.com/RoBorregos/home-hri/",
       "description": [
         "Autonomous service robot competition. Project Manager of the Human-Robot Interaction (HRI) module."
@@ -81,6 +148,18 @@
       "technologies": [
         "C++"
       ]
+    },
+    {
+      "title": "17th International Science Competition",
+      "description": [
+        "Hosted by ITESM. First-place award in an international science and technology competition."
+      ],
+      "result": "1st place",
+      "dateStart": "2022/1/1",
+      "dateEnd": "2022/1/1",
+      "links": [],
+      "images": [],
+      "technologies": []
     }
   ],
   "technologiesOptions": [

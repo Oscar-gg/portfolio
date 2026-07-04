@@ -3,6 +3,8 @@ import {
   logos,
   technologies,
   programmingLanguages,
+  education,
+  spokenLanguages,
 } from "~/data/typed/objects";
 
 import {
@@ -44,6 +46,22 @@ export const About = () => {
           ))}
         </div>
       </div>
+      {education && (
+        <div className="mb-10 rounded-lg border border-zinc-700 p-5">
+          <h3 className="mb-1 text-xl font-semibold text-white">
+            {education.institution}
+          </h3>
+          <p className="text-palette-blue">{education.degree}</p>
+          <p className="mb-3 text-sm text-zinc-400">{education.date}</p>
+          <ul className="flex flex-row flex-wrap gap-x-6 gap-y-1">
+            {education.details.map((detail) => (
+              <li key={detail} className="text-zinc-300">
+                {detail}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       <div className="flex flex-col gap-y-5">
         <div>
           <h3 className="mb-3 text-2xl text-white">Programming Languages</h3>
@@ -53,6 +71,21 @@ export const About = () => {
           <h3 className="mb-3 text-2xl text-white">Technologies</h3>
           <IconList size="small" list={technologies} maxItems={6} accordionMessage="Additional technologies used"/>
         </div>
+        {spokenLanguages && spokenLanguages.length > 0 && (
+          <div>
+            <h3 className="mb-3 text-2xl text-white">Languages</h3>
+            <div className="flex flex-row flex-wrap gap-x-6 gap-y-2">
+              {spokenLanguages.map((lang) => (
+                <div key={lang.language} className="flex flex-row items-center gap-x-2">
+                  <span className="text-white">{lang.language}</span>
+                  <span className="rounded bg-zinc-800 px-2 py-0.5 text-sm text-zinc-400">
+                    {lang.level}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

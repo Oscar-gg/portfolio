@@ -1,9 +1,26 @@
 {
   "experience": [
     {
-      "title": "Uber",
-      "date": "Jun 2024 - September 2024",
-      "position": "UberSTAR Software Developer Intern",
+      "title": "Uber - M3 Metrics",
+      "date": "Sep 2025 - Jan 2026",
+      "position": "Software Engineering Intern",
+      "images": [
+        {
+          "path": "/Experience/Uber.jpeg",
+          "description": "Uber Logo"
+        }
+      ],
+      "links": [],
+      "description": [
+        "Software engineering intern on the M3 Metrics team (Platform Engineering).",
+        "Implemented a high-cardinality detection mechanism in the Go-based M3 distributed query system using Thrift, enabling automated backoff for expensive queries across company-wide production metrics workloads.",
+        "Designed and built a production cost accounting framework for M3 queries with primary and secondary attribution, increasing query cost coverage from 75% to 93% across company-wide metrics workloads."
+      ]
+    },
+    {
+      "title": "Uber - UberSTAR",
+      "date": "Jun 2024 - Sep 2024",
+      "position": "Software Engineering Intern",
       "images": [
         {
           "path": "/Experience/Uber.jpeg",
@@ -50,8 +67,8 @@
     },
     {
       "title": "Computer Vision Research Intern",
-      "date": "Feb 2024 - Jun 2024",
-      "position": "Software Developer Intern at ITESM",
+      "date": "Feb 2024 - Aug 2025",
+      "position": "Software Engineering Intern — ITESM",
       "images": [
         {
           "path": "/Experience/Tec.jpg",
@@ -60,8 +77,8 @@
       ],
       "links": [],
       "description": [
-        "Crowd counting project aimed to optimize public space by analyzing usage of ITESM's Central Park.",
-        "Implemented person re-identification (ReID) using anchor-guided clustering with PyTorch, YOLO, and Docker environments.",
+        "Developed a crowd-counting project to optimize public space usage by analyzing the use of ITESM's Central Park.",
+        "Implemented person re-identification (ReID) using clustering, torchreid, YOLO, and Docker environments.",
         "Developed a video upload dashboard using Next.js, integrated with S3, and deployed via AWS Amplify."
       ]
     },
@@ -86,9 +103,9 @@
         }
       ],
       "description": [
-        "Dataexpress is a No-Code Data Pipeline ELT Platform that allows you to connect your data sources and destinations in minutes.",
-        "Worked on the frontend & backend, using Next.js, Node.js and Python.",
-        "Implemented a destination connector for Google Cloud Storage while adding validation, IAM permission testing, and feature documentation. Built a source connector for Facebook Ads using the Facebook Marketing API."
+        "Developed the frontend and backend of a No-Code Data Pipeline ELT Platform using Next.js, Node.js, and Python.",
+        "Created a destination connector for Google Cloud Storage, including validation, IAM permission testing, and feature documentation.",
+        "Built source connectors for Facebook Ads and Facebook Pages using the Marketing API."
       ]
     },
     {

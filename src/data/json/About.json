@@ -43,6 +43,29 @@
       "image": "/About/Bash.png"
     }
   ],
+  "education": {
+    "institution": "Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)",
+    "degree": "B.S. in Computer Science and Technology",
+    "date": "August 2022 - June 2026",
+    "details": [
+      "Academic Talent Scholarship",
+      "GPA: 98.8/100"
+    ]
+  },
+  "languages": [
+    {
+      "language": "Spanish",
+      "level": "Native"
+    },
+    {
+      "language": "English",
+      "level": "C1"
+    },
+    {
+      "language": "French",
+      "level": "Basic"
+    }
+  ],
   "technologies": [
     {
       "title": "Git",

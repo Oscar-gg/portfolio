@@ -16,6 +16,17 @@ export const aboutSchema = z.object({
   ),
   programmingLanguages: z.array(listElementSchema),
   technologies: z.array(listElementSchema),
+  education: z
+    .object({
+      institution: z.string(),
+      degree: z.string(),
+      date: z.string(),
+      details: z.array(z.string()),
+    })
+    .optional(),
+  languages: z
+    .array(z.object({ language: z.string(), level: z.string() }))
+    .optional(),
 });
 
 export const experienceSchema = z.object({

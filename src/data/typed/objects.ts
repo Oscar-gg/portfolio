@@ -16,6 +16,8 @@ const aboutInfo = aboutSchema.parse(About);
 export const logos = aboutInfo.logos;
 export const programmingLanguages = aboutInfo.programmingLanguages;
 export const technologies = aboutInfo.technologies;
+export const education = aboutInfo.education;
+export const spokenLanguages = aboutInfo.languages;
 
 const experienceInfo = experienceSchema.parse(Experience);
 
