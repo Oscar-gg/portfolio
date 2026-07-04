@@ -19,12 +19,11 @@ export const About = () => {
     <>
       <div className="mb-10 flex flex-row flex-wrap gap-x-3 gap-y-3">
         <p className="mx-3 mt-2 text-justify text-white lg:w-[40%]">
-          I'm a passionate software developer that looks forward to tackle new
-          challenges and get involved in a variety of projects. I'm eager to
-          keep learning about new technologies and inspired to work in
-          fast-paced environments. I have experience in web and mobile
-          development and have been able to develop my skills by being member of
-          Dataexpress, RoBorregos, and by working on a variety of projects.
+          I'm a software developer passionate about building impactful products
+          and tackling complex problems. I've had the opportunity to intern at
+          Uber and work across web, mobile, and robotics projects as a member of
+          RoBorregos and Dataexpress. I'm always looking to expand my skills and
+          contribute to fast-moving teams.
         </p>
         <div className="flex w-full flex-row flex-wrap justify-around gap-x-3 gap-y-3 lg:w-[50%]">
           {logos.map((logo) => (

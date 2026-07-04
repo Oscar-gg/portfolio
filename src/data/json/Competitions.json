@@ -3,7 +3,7 @@
     {
       "title": "Mexico ICPC Finals",
       "description": [
-        "Competed in the Mexico ICPC Finals."
+        "Competed in the Mexico ICPC Finals, the premier competitive programming contest for university students in the country."
       ],
       "result": "Top 25 from México",
       "dateStart": "2024/11/9",
@@ -35,7 +35,7 @@
       "title": "RoboCup@Home",
       "github_repo": "https://github.com/RoBorregos/home-hri/",
       "description": [
-        "Autonomous service robot competition. PM of Human Robot Interaction module."
+        "Autonomous service robot competition. Project Manager of the Human-Robot Interaction (HRI) module."
       ],
       "result": "2nd place national",
       "dateStart": "2024/4/1",
@@ -66,7 +66,7 @@
     {
       "title": "Meta Hacker Cup 2023",
       "description": [
-        "Meta Hacker Cup."
+        "Meta's annual international programming competition, featuring algorithmic problem-solving challenges across multiple rounds."
       ],
       "result": "11th place from México (Round 1)",
       "dateStart": "2023/10/1",

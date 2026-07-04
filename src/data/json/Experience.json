@@ -43,15 +43,15 @@
       "description": [
         "Software engineering intern at the Biztech team (Platform Engineering).",
         "Developed a GenAI Application Evaluation framework for internal tools using Michelangelo, Langchain, gRPC, Java, and internal tooling.",
-        "Implemented robust methodology by analyzing over 7 papers on the field. Bench-marked individual module performance using field-related datasets.",
-        "Refactored framework module, optimizing interaction speed with Hive by 70%.",
-        "Implemented CLI apps for module testing, benchmarking, dataset generation, and visualization results."
+        "Implemented robust methodology by analyzing over 7 papers in the field. Benchmarked individual module performance using field-related datasets.",
+        "Refactored framework module, reducing Hive query latency by 70%.",
+        "Implemented CLI tools for module testing, benchmarking, dataset generation, and result visualization."
       ]
     },
     {
-      "title": "On Campus Intern",
+      "title": "Computer Vision Research Intern",
       "date": "Feb 2024 - Jun 2024",
-      "position": "Software Developer Intern",
+      "position": "Software Developer Intern at ITESM",
       "images": [
         {
           "path": "/Experience/Tec.jpg",
@@ -61,7 +61,7 @@
       "links": [],
       "description": [
         "Crowd counting project aimed to optimize public space by analyzing usage of ITESM's Central Park.",
-        "Implemented person REID using anchor-guided clustering, with PyTorch, YOLO, and Dockerized environments.",
+        "Implemented person re-identification (ReID) using anchor-guided clustering with PyTorch, YOLO, and Docker environments.",
         "Developed a video upload dashboard using Next.js, integrated with S3, and deployed via AWS Amplify."
       ]
     },
@@ -87,7 +87,7 @@
       ],
       "description": [
         "Dataexpress is a No-Code Data Pipeline ELT Platform that allows you to connect your data sources and destinations in minutes.",
-        "Worked on the front & backend, using Next.js, Node.js and Python.",
+        "Worked on the frontend & backend, using Next.js, Node.js and Python.",
         "Implemented a destination connector for Google Cloud Storage while adding validation, IAM permission testing, and feature documentation. Built a source connector for Facebook Ads using the Facebook Marketing API."
       ]
     },
@@ -130,8 +130,8 @@
       "description": [
         "Representative Robotics Team from Tecnológico de Monterrey, Campus Monterrey.",
         "Participated in national robotics competitions (Robocup Maze, Robocup@Home), representing ITESM.",
-        "Integrated locally runned STT (Whisper) and VAD (Silero VAD) ML models to a speech to text pipeline (ROS, Python) for an xArm 6 robot, to execute voice commands as interpreted through a Jetson Xavier.",
-        "Active member of Web development, Social Impact, Robocup@Home (HRI and Nav), and RCJ Maze mentoring teams."
+        "Integrated locally run STT (Whisper) and VAD (Silero VAD) ML models into a speech-to-text pipeline (ROS, Python) for an xArm 6 robot, enabling voice command execution on a Jetson Xavier.",
+        "Led Human-Robot Interaction (HRI) development for RoboCup@Home and mentored the RCJ Maze team."
       ]
     },
     {
@@ -194,7 +194,7 @@
         }
       ],
       "description": [
-        "MAEs is an organization that provides academic support to collegue students in a variety of subjects.",
+        "MAE is an organization that provides academic support to college students in a variety of subjects.",
         "Providing academic mentoring to students in mathematics, computer science, and physics courses.",
         "Aided in the MAE webpage redesign to enhance user experience and streamline scheduling for students."
       ]
