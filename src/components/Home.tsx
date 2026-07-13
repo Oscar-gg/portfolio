@@ -4,6 +4,7 @@ import {
   useRef,
   useEffect,
 } from "react";
+import Link from "next/link";
 import { ContactList } from "./List/contactList";
 
 const handleMouseEnter = (
@@ -85,6 +86,11 @@ export const Home = () => {
               Resume
             </button>
           </a>
+          <Link href="/blog">
+            <button className="group rounded-lg bg-palette-blue p-2 text-lg font-semibold text-white transition-colors hover:bg-palette-blue/80">
+              Blog
+            </button>
+          </Link>
           <ContactList />
         </div>
       </div>

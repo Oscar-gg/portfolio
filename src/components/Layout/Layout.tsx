@@ -115,11 +115,19 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         <title>Oscar Arreola</title>
         <meta name="description" content="Oscar Arreola - portfolio" />
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Oscar Arreola's Blog"
+          href="/blog/rss.xml"
+        />
       </Head>
 
-      <Navbar routes={routes} setNavHeight={setNavHeight} />
-      {refChildren}
-      <Footer routes={routes} />
+      <div className="flex min-h-screen flex-col">
+        <Navbar routes={routes} setNavHeight={setNavHeight} />
+        <div className="flex-1">{refChildren}</div>
+        <Footer routes={routes} />
+      </div>
     </>
   );
 };

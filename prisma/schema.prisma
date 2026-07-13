@@ -6,12 +6,9 @@ generator client {
 }
 
 datasource db {
-    provider = "sqlite"
-    // NOTE: When using mysql or sqlserver, uncomment the @db.Text annotations in model Account below
-    // Further reading:
-    // https://next-auth.js.org/adapters/prisma#create-the-prisma-schema
-    // https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#string
-    url      = env("DATABASE_URL")
+    provider  = "postgresql"
+    url       = env("DATABASE_URL")
+    directUrl = env("DIRECT_URL")
 }
 
 model Post {
@@ -62,6 +59,50 @@ model User {
     accounts      Account[]
     sessions      Session[]
     posts         Post[]
+    blogPosts     BlogPost[]
+    comments      Comment[]
+}
+
+model BlogPost {
+    id          String    @id @default(cuid())
+    slug        String    @unique
+    title       String
+    excerpt     String?
+    content     String
+    coverImage  String?
+    published   Boolean   @default(false)
+    publishedAt DateTime?
+    viewCount   Int       @default(0)
+    createdAt   DateTime  @default(now())
+    updatedAt   DateTime  @updatedAt
+
+    author   User   @relation(fields: [authorId], references: [id])
+    authorId String
+
+    comments Comment[]
+
+    @@index([slug])
+    @@index([published, publishedAt])
+}
+
+model Comment {
+    id        String   @id @default(cuid())
+    content   String
+    deleted   Boolean  @default(false)
+    createdAt DateTime @default(now())
+
+    post   BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+    postId String
+
+    author   User   @relation(fields: [authorId], references: [id])
+    authorId String
+
+    parent   Comment?  @relation("CommentReplies", fields: [parentId], references: [id], onDelete: Cascade)
+    parentId String?
+    replies  Comment[] @relation("CommentReplies")
+
+    @@index([postId])
+    @@index([parentId])
 }
 
 model VerificationToken {

@@ -13,6 +13,7 @@ import { type Session } from "next-auth";
 import superjson from "superjson";
 import { ZodError } from "zod";
 
+import { env } from "~/env";
 import { getServerAuthSession } from "~/server/auth";
 import { db } from "~/server/db";
 
@@ -129,3 +130,23 @@ const enforceUserIsAuthed = t.middleware(({ ctx, next }) => {
  * @see https://trpc.io/docs/procedures
  */
 export const protectedProcedure = t.procedure.use(enforceUserIsAuthed);
+
+/** Reusable middleware that enforces the caller is the blog admin. */
+const enforceUserIsAdmin = t.middleware(({ ctx, next }) => {
+  if (!ctx.session?.user || ctx.session.user.email !== env.ADMIN_EMAIL) {
+    throw new TRPCError({ code: "UNAUTHORIZED" });
+  }
+  return next({
+    ctx: {
+      session: { ...ctx.session, user: ctx.session.user },
+    },
+  });
+});
+
+/**
+ * Admin-only procedure.
+ *
+ * Use this for mutations that should only be run by the blog owner (creating/editing posts),
+ * identified by matching `ADMIN_EMAIL`.
+ */
+export const adminProcedure = t.procedure.use(enforceUserIsAdmin);
