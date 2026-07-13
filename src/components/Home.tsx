@@ -1,9 +1,4 @@
-import {
-  type MutableRefObject,
-  type RefObject,
-  useRef,
-  useEffect,
-} from "react";
+import { type MutableRefObject, type RefObject, useRef } from "react";
 import Link from "next/link";
 import { ContactList } from "./List/contactList";
 
@@ -33,7 +28,7 @@ export const Home = () => {
 
   return (
     <div>
-      <div className="flex flex-col items-center h-[100vh] justify-center">
+      <div className="flex h-[100vh] flex-col items-center justify-center">
         <h2 className="text-2xl text-secondary">Hi, I'm</h2>
         <h2 className="mb-10 text-center text-5xl text-secondary">
           <div

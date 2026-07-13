@@ -7,7 +7,7 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "~/components/ui/carousel";
-import { Card, CardContent } from "~/components/ui/card";
+import { Card } from "~/components/ui/card";
 
 import { type ImageInfo } from "~/components/card/experienceCard";
 
@@ -40,9 +40,9 @@ export const ImageCarousel = ({ images }: { images: ImageInfo[] }) => {
             >
               <Card
                 style={{ backgroundImage: `url('${image.path}')` }}
-                className="relative h-full max-h-full bg-background w-full max-w-full bg-contain bg-center bg-no-repeat"
+                className="relative h-full max-h-full w-full max-w-full bg-background bg-contain bg-center bg-no-repeat"
               >
-                <p className="absolute p-2 bottom-0 left-[50%] translate-x-[-50%] rounded-md bg-background text-center text-white">
+                <p className="absolute bottom-0 left-[50%] translate-x-[-50%] rounded-md bg-background p-2 text-center text-white">
                   {" "}
                   {image.description}
                 </p>

@@ -1,10 +1,6 @@
 import { z } from "zod";
 
-import {
-  createTRPCRouter,
-  protectedProcedure,
-  publicProcedure,
-} from "~/server/api/trpc";
+import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
 import { env } from "~/env";
 
@@ -17,7 +13,12 @@ const graphqlWithAuth = graphql.defaults({
   },
 });
 
-import { githubRepo, githubOwner, githubEmail, githubNoReplyEmail } from "~/data/typed/objects";
+import {
+  githubRepo,
+  githubOwner,
+  githubEmail,
+  githubNoReplyEmail,
+} from "~/data/typed/objects";
 
 interface QuerySchema {
   repository: {

@@ -1,4 +1,3 @@
-import { twMerge } from "tailwind-merge";
 import { cn } from "~/utils/utils";
 
 interface IconListElement {
@@ -72,7 +71,7 @@ export const IconList = ({
         ))}
       </div>
       {detailItems.length > 0 && (
-        <Accordion  type="single" collapsible className="w-full mt-4">
+        <Accordion type="single" collapsible className="mt-4 w-full">
           <AccordionItem className="border-b-0 text-white" value="list-details">
             <AccordionTrigger>
               {accordionMessage} ({detailItems.length})

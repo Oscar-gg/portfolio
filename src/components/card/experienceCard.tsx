@@ -1,9 +1,4 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogOverlay,
-  DialogTrigger,
-} from "~/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger } from "~/components/ui/dialog";
 
 import {
   Accordion,
@@ -73,11 +68,11 @@ export const ExperienceCard = ({
         />
         <div className="mb-auto mt-auto md:ml-10">
           <ul className="list-disc marker:text-white">
-          {description.map((paragraph, index) => (
-            <li className="mb-4" key={index}>
-              {paragraph}
-            </li>
-          ))}
+            {description.map((paragraph, index) => (
+              <li className="mb-4" key={index}>
+                {paragraph}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
