@@ -9,6 +9,31 @@ import {
   publicProcedure,
 } from "~/server/api/trpc";
 
+const getInitials = (name: string | null) => {
+  if (!name) return null;
+  return name
+    .trim()
+    .split(/\s+/)
+    .map((part) => part[0]?.toUpperCase())
+    .join("");
+};
+
+// Comments flagged anonymous should only show initials
+const redactAnonymousAuthor = <
+  T extends {
+    anonymous: boolean;
+    author: { name: string | null; image: string | null };
+  },
+>(
+  comment: T,
+): T =>
+  comment.anonymous
+    ? {
+        ...comment,
+        author: { name: getInitials(comment.author.name), image: null },
+      }
+    : comment;
+
 const slugify = (title: string) =>
   title
     .toLowerCase()
@@ -74,19 +99,21 @@ export const blogRouter = createTRPCRouter({
 
       // Drafts are only visible to the admin previewing them.
       const isAdmin = ctx.session?.user.email === env.ADMIN_EMAIL;
-      if (!post.published && !isAdmin) throw new TRPCError({ code: "NOT_FOUND" });
+      if (!post.published && !isAdmin)
+        throw new TRPCError({ code: "NOT_FOUND" });
 
-      return post;
+      return { ...post, comments: post.comments.map(redactAnonymousAuthor) };
     }),
 
   listComments: publicProcedure
     .input(z.object({ postId: z.string() }))
-    .query(({ ctx, input }) => {
-      return ctx.db.comment.findMany({
+    .query(async ({ ctx, input }) => {
+      const comments = await ctx.db.comment.findMany({
         where: { postId: input.postId },
         orderBy: { createdAt: "asc" },
         include: { author: { select: { name: true, image: true } } },
       });
+      return comments.map(redactAnonymousAuthor);
     }),
 
   incrementView: publicProcedure
@@ -156,6 +183,7 @@ export const blogRouter = createTRPCRouter({
         postId: z.string(),
         content: z.string().min(1).max(2000),
         parentId: z.string().optional(),
+        anonymous: z.boolean().optional().default(false),
       }),
     )
     .mutation(async ({ ctx, input }) => {
@@ -173,15 +201,40 @@ export const blogRouter = createTRPCRouter({
         }
       }
 
-      return ctx.db.comment.create({
+      const comment = await ctx.db.comment.create({
         data: {
           content: input.content,
+          anonymous: input.anonymous,
           post: { connect: { id: input.postId } },
           author: { connect: { id: ctx.session.user.id } },
-          ...(input.parentId && { parent: { connect: { id: input.parentId } } }),
+          ...(input.parentId && {
+            parent: { connect: { id: input.parentId } },
+          }),
         },
         include: { author: { select: { name: true, image: true } } },
       });
+
+      return redactAnonymousAuthor(comment);
+    }),
+
+  setCommentAnonymous: protectedProcedure
+    .input(z.object({ id: z.string(), anonymous: z.boolean() }))
+    .mutation(async ({ ctx, input }) => {
+      const comment = await ctx.db.comment.findUnique({
+        where: { id: input.id },
+      });
+      if (!comment) throw new TRPCError({ code: "NOT_FOUND" });
+      if (comment.authorId !== ctx.session.user.id) {
+        throw new TRPCError({ code: "FORBIDDEN" });
+      }
+
+      const updated = await ctx.db.comment.update({
+        where: { id: input.id },
+        data: { anonymous: input.anonymous },
+        include: { author: { select: { name: true, image: true } } },
+      });
+
+      return redactAnonymousAuthor(updated);
     }),
 
   deleteComment: protectedProcedure

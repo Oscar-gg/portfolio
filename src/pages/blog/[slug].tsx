@@ -12,6 +12,15 @@ import {
 import { db } from "~/server/db";
 import { Eye } from "lucide-react";
 
+const getInitials = (name: string | null) => {
+  if (!name) return null;
+  return name
+    .trim()
+    .split(/\s+/)
+    .map((part) => part[0]?.toUpperCase())
+    .join("");
+};
+
 interface PostProps {
   id: string;
   slug: string;
@@ -136,7 +145,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           authorId: comment.authorId,
           parentId: comment.parentId,
           deleted: comment.deleted,
-          author: comment.author,
+          anonymous: comment.anonymous,
+          author: comment.anonymous
+            ? { name: getInitials(comment.author.name), image: null }
+            : comment.author,
         })),
       } satisfies PostProps,
     },

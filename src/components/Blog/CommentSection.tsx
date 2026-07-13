@@ -11,8 +11,18 @@ export interface CommentDTO {
   authorId: string;
   parentId: string | null;
   deleted: boolean;
+  anonymous: boolean;
   author: { name: string | null; image: string | null };
 }
+
+const getInitials = (name: string | null) => {
+  if (!name) return "?";
+  return name
+    .trim()
+    .split(/\s+/)
+    .map((part) => part[0]?.toUpperCase())
+    .join("");
+};
 
 const CommentItem = ({
   comment,
@@ -23,10 +33,14 @@ const CommentItem = ({
   setReplyingTo,
   replyContent,
   setReplyContent,
+  replyAnonymous,
+  setReplyAnonymous,
   onReplySubmit,
   onDelete,
+  onToggleAnonymous,
   isReplying,
   isDeleting,
+  isTogglingAnonymous,
 }: {
   comment: CommentDTO;
   repliesByParent: Map<string, CommentDTO[]>;
@@ -36,12 +50,17 @@ const CommentItem = ({
   setReplyingTo: (id: string | null) => void;
   replyContent: string;
   setReplyContent: (value: string) => void;
+  replyAnonymous: boolean;
+  setReplyAnonymous: (value: boolean) => void;
   onReplySubmit: (parentId: string) => void;
   onDelete: (id: string) => void;
+  onToggleAnonymous: (id: string, anonymous: boolean) => void;
   isReplying: boolean;
   isDeleting: boolean;
+  isTogglingAnonymous: boolean;
 }) => {
-  const canDelete = comment.authorId === currentUserId && !comment.deleted;
+  const isOwnComment = comment.authorId === currentUserId && !comment.deleted;
+  const canDelete = isOwnComment;
   const replies = repliesByParent.get(comment.id) ?? [];
   const [isCollapsed, setIsCollapsed] = useState(false);
 
@@ -97,6 +116,19 @@ const CommentItem = ({
                 Reply
               </button>
             )}
+            {isOwnComment && (
+              <button
+                onClick={() =>
+                  onToggleAnonymous(comment.id, !comment.anonymous)
+                }
+                disabled={isTogglingAnonymous}
+                className="text-palette-blue underline"
+              >
+                {comment.anonymous
+                  ? "Show my name"
+                  : `Show as ${getInitials(comment.author.name)}`}
+              </button>
+            )}
             {canDelete && (
               <button
                 onClick={() => onDelete(comment.id)}
@@ -116,6 +148,14 @@ const CommentItem = ({
                 placeholder="Write a reply..."
                 rows={2}
               />
+              <label className="flex items-center gap-2 text-xs text-quaternary">
+                <input
+                  type="checkbox"
+                  checked={replyAnonymous}
+                  onChange={(e) => setReplyAnonymous(e.target.checked)}
+                />
+                Post anonymously (shows initials only)
+              </label>
               <div className="flex justify-end gap-2">
                 <Button
                   type="button"
@@ -150,10 +190,14 @@ const CommentItem = ({
                   setReplyingTo={setReplyingTo}
                   replyContent={replyContent}
                   setReplyContent={setReplyContent}
+                  replyAnonymous={replyAnonymous}
+                  setReplyAnonymous={setReplyAnonymous}
                   onReplySubmit={onReplySubmit}
                   onDelete={onDelete}
+                  onToggleAnonymous={onToggleAnonymous}
                   isReplying={isReplying}
                   isDeleting={isDeleting}
+                  isTogglingAnonymous={isTogglingAnonymous}
                 />
               ))}
             </ul>
@@ -186,8 +230,10 @@ export const CommentSection = ({
 }) => {
   const { data: session } = useSession();
   const [content, setContent] = useState("");
+  const [anonymous, setAnonymous] = useState(false);
   const [replyingTo, setReplyingTo] = useState<string | null>(null);
   const [replyContent, setReplyContent] = useState("");
+  const [replyAnonymous, setReplyAnonymous] = useState(false);
   const utils = api.useContext();
 
   const { data: fetchedComments } = api.blog.listComments.useQuery({
@@ -207,8 +253,10 @@ export const CommentSection = ({
   const addComment = api.blog.addComment.useMutation({
     onSuccess: () => {
       setContent("");
+      setAnonymous(false);
       setReplyingTo(null);
       setReplyContent("");
+      setReplyAnonymous(false);
       void utils.blog.listComments.invalidate({ postId });
     },
   });
@@ -217,15 +265,24 @@ export const CommentSection = ({
     onSuccess: () => void utils.blog.listComments.invalidate({ postId }),
   });
 
+  const toggleAnonymous = api.blog.setCommentAnonymous.useMutation({
+    onSuccess: () => void utils.blog.listComments.invalidate({ postId }),
+  });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!content.trim()) return;
-    addComment.mutate({ postId, content: content.trim() });
+    addComment.mutate({ postId, content: content.trim(), anonymous });
   };
 
   const handleReplySubmit = (parentId: string) => {
     if (!replyContent.trim()) return;
-    addComment.mutate({ postId, content: replyContent.trim(), parentId });
+    addComment.mutate({
+      postId,
+      content: replyContent.trim(),
+      parentId,
+      anonymous: replyAnonymous,
+    });
   };
 
   return (
@@ -242,6 +299,14 @@ export const CommentSection = ({
             placeholder="Share your thoughts..."
             rows={3}
           />
+          <label className="flex items-center gap-2 text-xs text-quaternary">
+            <input
+              type="checkbox"
+              checked={anonymous}
+              onChange={(e) => setAnonymous(e.target.checked)}
+            />
+            Post anonymously (shows initials only)
+          </label>
           <Button
             type="submit"
             disabled={addComment.isLoading || !content.trim()}
@@ -277,10 +342,16 @@ export const CommentSection = ({
             }}
             replyContent={replyContent}
             setReplyContent={setReplyContent}
+            replyAnonymous={replyAnonymous}
+            setReplyAnonymous={setReplyAnonymous}
             onReplySubmit={handleReplySubmit}
             onDelete={(id) => deleteComment.mutate({ id })}
+            onToggleAnonymous={(id, anonymous) =>
+              toggleAnonymous.mutate({ id, anonymous })
+            }
             isReplying={addComment.isLoading}
             isDeleting={deleteComment.isLoading}
+            isTogglingAnonymous={toggleAnonymous.isLoading}
           />
         ))}
       </ul>
